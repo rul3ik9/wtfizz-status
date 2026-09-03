@@ -16,11 +16,11 @@ It is a **summary view**. The detailed records stay in the private project repos
 
 ## Two audiences, two pages
 
- is for the client and the agency. It carries the same system verdicts as the
+**index.html** is for the client and the agency. It carries the same system verdicts as the
 engineering page, in plain language, with no defect log, no module names, and no verification
 detail.
 
- is internal. It carries everything: the module inventory, every open finding, the
+**dev.html** is internal. It carries everything: the module inventory, every open finding, the
 review history, the corrections, and the standing caveat that no Play session has been run.
 
 **The client page must never assert that something is tested or verified.** Leaving internal QA
