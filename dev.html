@@ -366,24 +366,24 @@
             attempt fails silently.</td>
         <td>The feature cannot work at all. It fails safely — nothing is duplicated or lost.
             One line.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M10</td>
         <td><b>The campaign keyword allows one guess more than intended</b> — a limit of three gives
             four.</td>
         <td>Minor, but it is a limit that exists to be enforced. One character.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M11</td>
         <td><b>An unused visual-effect file changes player movement speed directly,</b> bypassing the
             single system that is supposed to own that.</td>
         <td>Nothing calls it today. If anyone ever did, it would fight the tower effects and leave
             players moving wrongly. Delete it.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M12</td>
         <td><b>A money-themed effect pack sits unused in the library,</b> containing spinning coins
             and flying cash.</td>
         <td>Nothing uses it, so nothing shows on screen — but connecting it would put money imagery
             in a game whose brand rules forbid it outright.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M13</td>
         <td><b>Four pieces of the game do more work every frame than they need to</b> — including one
             that scans the entire world several times a second on every player's phone, and one that
@@ -391,13 +391,13 @@
             changed.</td>
         <td>Directly threatens the frame-rate target on phones. All four are fixable without moving
             any budget or invalidating any test.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-warn">PARTLY FIXED</span></td></tr>
       <tr><td class="id">M14</td>
         <td><b>One setting sits outside its own allowed range</b> — the only one of 273, and
             long-standing.</td>
         <td>Small, but our own record from 2 September wrongly claimed every setting was in range.
             Checking the game directly is what caught it.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M15</td>
         <td><b>The busiest scene got heavier, not lighter.</b> Parts loaded around a player standing
             in town rose from 1,966 to 2,214 since the loading distance was last chosen — and no
@@ -412,7 +412,7 @@
             at all — that tool was never built.</td>
         <td>These are missing prerequisites, not missing measurements. No device test can happen
             until they exist.</td>
-        <td><span class="who w-now">DO NOW</span><br>then needs a phone</td></tr>
+        <td><span class="pill p-warn">DEFERRED</span><br>then needs a phone</td></tr>
       <tr><td class="id">M17</td>
         <td><b>Every reward number is now out of date.</b> They were measured when 20 plants produced
             leaves continuously. After the farm fix they no longer do.</td>
@@ -436,55 +436,55 @@
         <td>This is the one staff tool in the game and it is on the never-cut list precisely because
             a player-built monster <i>shape</i> is the real moderation risk. A stand-only monster is
             currently unreachable.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M19</td>
         <td><b>A brand-new player cannot finish the "build your first friend" quest.</b> The starter
             monster pieces are granted <i>after</i> the quest completes, and building fails without
             pieces.</td>
         <td>A dead end on a fresh account, which also blocks the fourth farm row from ever
             unlocking.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M20</td>
         <td><b>Per-type reaction counts do not survive syncing between servers.</b> The board shows
             four separate emoji counts, but the shared record that travels between servers still
             stores a single total.</td>
         <td>The four-emoji breakdown is on the never-cut list as a child-safety requirement. Right
             now the detail exists on one server and is lost across them.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M21</td>
         <td><b>Tower prices do not reset at the day boundary for a player who stays connected.</b>
             Someone online across midnight keeps yesterday's increased price.</td>
         <td>Known failure pattern. Small, but it is a price the player sees.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M22</td>
         <td><b>Three of the six oversized monster pieces cannot actually be placed</b> — they are
             missing their size definitions, so the game rejects them.</td>
         <td>Half the large-piece feature is unusable.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M23</td>
         <td><b>The main display shows one total can count</b> where the design document asks for the
             three flavours shown separately. The information is already being sent — the screen just
             does not use it.</td>
         <td>Players cannot see which flavour they are short of before walking to the factory.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
       <tr><td class="id">M24</td>
         <td><b>The factory has no "how many" control</b> — it always converts every leaf the player
             is carrying.</td>
         <td>The design document asks for an adjustable amount, defaulting to everything carried.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-warn">PARTLY FIXED</span></td></tr>
       <tr><td class="id">M25</td>
         <td><b>Two required measurements are not being recorded</b> — how often players pour, and the
             value returned by converting spares.</td>
         <td>These are exactly the two numbers needed to settle M1. Without them, the balance decision
             is made blind.</td>
-        <td><span class="who w-now">DO NOW</span><br>needed before M1</td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span><br>needed before M1</td></tr>
       <tr><td class="id">M26</td>
         <td><b>Only three tables can be changed remotely</b> without republishing the game. The design
             document lists many more — the colour palette, name banks, recipes, the featured set,
             effects and keyword locations.</td>
         <td>The campaign is meant to run for a year without game updates. Today most of it cannot be
             adjusted that way.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
+        <td><span class="pill p-ok">FIXED 3 SEPT</span></td></tr>
     </tbody>
   </table>
   </div>

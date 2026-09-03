@@ -121,15 +121,15 @@
 </header>
 
 <div class="tiles">
-  <div class="tile ok"><div class="n">23</div><div class="l">Parts built</div></div>
-  <div class="tile warn"><div class="n">8</div><div class="l">In progress</div></div>
+  <div class="tile ok"><div class="n">30</div><div class="l">Parts built</div></div>
+  <div class="tile warn"><div class="n">1</div><div class="l">In progress</div></div>
   <div class="tile stop"><div class="n">4</div><div class="l">Waiting on you</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
 </div>
 
-<div class="bar" aria-label="23 of 35 parts built, 8 in progress, 4 waiting on approval">
-  <i class="b-ok" style="width:65.7%"></i>
-  <i class="b-warn" style="width:22.9%"></i>
+<div class="bar" aria-label="30 of 35 parts built, 1 in progress, 4 waiting on approval">
+  <i class="b-ok" style="width:85.7%"></i>
+  <i class="b-warn" style="width:2.9%"></i>
   <i class="b-stop" style="width:11.4%"></i>
 </div>
 <div class="barkey">
@@ -219,8 +219,8 @@
     <tbody>
       <tr><td class="what">Turning leaves into cans, choosing a flavour</td>
         <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>Working. Still to add: a control for how many to make at once, rather than always
-            converting everything carried.</td></tr>
+        <td>Working, and the game now accepts a chosen amount. The on-screen control to pick that amount
+            is the last piece.</td></tr>
       <tr><td class="what">Mixing flavours</td>
         <td><span class="pill p-stop">WAITING ON YOU</span></td>
         <td>Twenty recipe slots and the twelve-colour system are built and working. Waiting on the
@@ -245,9 +245,9 @@
     <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
       <tr><td class="what">Building a monster</td>
-        <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>Free to build, twelve slots, oversized pieces take two. Three of the six oversized pieces
-            still need their measurements added before they can be placed.</td></tr>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Free to build, twelve slots, oversized pieces take two. All six oversized pieces can now be
+            placed.</td></tr>
       <tr><td class="what">Monsters following players</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Up to ten shown near any one player, even in a crowd.</td></tr>
@@ -275,9 +275,9 @@
     <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
       <tr><td class="what">The tower</td>
-        <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>The player chooses the effect from three panels — no random rolls, no queueing. A small
-            fix outstanding on how the price resets at the start of a new day.</td></tr>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>The player chooses the effect from three panels — no random rolls, no queueing. Prices now
+            reset correctly at the start of a new day, including for players who stay online.</td></tr>
       <tr><td class="what">Running several effects at once</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Three effects together, each with its own countdown, and they combine properly.</td></tr>
@@ -299,9 +299,9 @@
         <td>Everything a player makes goes on it. The order is shuffled each time it opens, so the
             same few entries do not always sit at the top.</td></tr>
       <tr><td class="what">Keeping the board the same everywhere</td>
-        <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>Working. The four separate reaction counts still need to be carried between servers as
-            well as shown on one.</td></tr>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>The four separate reaction counts are now carried between servers, so the breakdown is the
+            same wherever a player looks.</td></tr>
       <tr><td class="what">Reactions</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Four reactions, and <b>every one of them adds a point — none takes a point away.</b>
@@ -336,9 +336,10 @@
       <tr><td class="what">Moving and looking around</td>
         <td><span class="pill p-ok">BUILT</span></td><td>Built for phones first.</td></tr>
       <tr><td class="what">Tutorial, starter gifts and first quests</td>
-        <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>Seven steps and the opening quests are in. One ordering fix outstanding so a brand-new
-            player receives their starter monster pieces at the right moment.</td></tr>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Seven steps and the opening quests are in. A brand-new player now receives their starter
+            monster pieces when the quest begins, so the first monster is guaranteed rather than
+            left to chance.</td></tr>
       <tr><td class="what">Showing players where to go next</td>
         <td><span class="pill p-ok">BUILT</span></td><td>A guiding trail to the current goal.</td></tr>
       <tr><td class="what">Daily quests</td>
@@ -356,13 +357,13 @@
         <td>Saves constantly and again the moment a player leaves. When the item list changed, no
             player lost anything they were holding, had placed, or had built.</td></tr>
       <tr><td class="what">Changing settings without updating the game</td>
-        <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>Working for the core settings. Being widened so more of the campaign can be adjusted
-            during the year without a game update.</td></tr>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Widened from three adjustable areas to fifteen, so most of the campaign can be tuned during
+            the year without a game update.</td></tr>
       <tr><td class="what">Staff tool to remove an entry</td>
-        <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>Removes any entry across every server at once. Being extended to cover a monster placed
-            on a display stand as well as one on the board.</td></tr>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Removes any entry across every server at once, and now reaches a monster placed on a display
+            stand as well as one on the board.</td></tr>
       <tr><td class="what">Campaign keyword entry</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>The stand moves around town and changes through the day. Campaign rounds are written
@@ -371,9 +372,9 @@
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Ready and empty by design, waiting for campaign content.</td></tr>
       <tr><td class="what">Measuring what players do</td>
-        <td><span class="pill p-warn">IN PROGRESS</span></td>
-        <td>Reaction figures are being recorded. Two further measures are being added — they are
-            what will settle item 3 above with real numbers rather than estimates.</td></tr>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Reaction figures are recorded, and so are pouring and item-conversion values — the two
+            measures needed to settle item 3 above with real numbers rather than estimates.</td></tr>
     </tbody>
   </table>
   </div>
@@ -386,7 +387,7 @@
   <table>
     <thead><tr><th>#</th><th>Screen</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td class="id">1</td><td>Main display — leaves, cans, hearts, current goal, tower progress</td><td><span class="pill p-warn">IN PROGRESS</span></td></tr>
+      <tr><td class="id">1</td><td>Main display — leaves, cans by flavour, hearts, current goal, tower progress</td><td><span class="pill p-ok">BUILT</span></td></tr>
       <tr><td class="id">2</td><td>Bag — food, decorations and monster pieces</td><td><span class="pill p-ok">BUILT</span></td></tr>
       <tr><td class="id">3</td><td>Mixing, and the flavours you have already made</td><td><span class="pill p-ok">BUILT</span></td></tr>
       <tr><td class="id">4</td><td>Name picker</td><td><span class="pill p-ok">BUILT</span></td></tr>
@@ -404,9 +405,8 @@
     </tbody>
   </table>
   </div>
-  <p class="lede" style="margin-top:14px">Screens 1 and 5 are marked in progress for small additions
-     — showing the three can flavours separately on the main display, and a "how many" control at the
-     factory. Both are working screens today.</p>
+  <p class="lede" style="margin-top:14px">Screen 5 is marked in progress for one small addition — a "how many" control at the factory.
+     It is a working screen today.</p>
 </section>
 
 <section>
