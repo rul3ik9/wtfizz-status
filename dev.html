@@ -989,6 +989,23 @@
         &ldquo;Could not prepare your save&rdquo;. The helper moved above the migration table; the
         migration now runs clean and carries legacy heart counts across into the 4-emoji reaction map.
         No data was lost &mdash; the loader ends the session before writing.</li>
+    <li><b>A tutorial soft-lock found in play and closed.</b> The tutorial asked the player to sow four
+        holes while they had no seeds, and the sowing prompt was hidden rather than disabled &mdash; so every
+        socket looked broken and nothing on screen mentioned that seeds come free from the town dispenser.
+        Three defects behind it: the vanishing prompt, a missing tutorial step, and no path destination for
+        the dispenser for the guide to point at. The prompt now stays and names the fix, a seed step was
+        inserted, and the dispenser became a real destination.</li>
+    <li><b>A near-miss inside that fix.</b> The first attempt added the destination but not the anchor, and
+        the objective builder discards any row whose anchor it does not recognise &mdash; silently, with no
+        error. The new step vanished and the tutorial rebuilt at its old length. Caught by counting the built
+        list rather than trusting it; both readers now share one list.</li>
+    <li><b>Night was unplayable, and the lamp posts were props.</b> The six lamp models in the world contain
+        no lights at all &mdash; the day cycle had been dimming the ten landmark accent lights instead. The
+        ambient floor was also at the bottom. The floor was lifted, the lamp posts now emit, and the count
+        went to eighteen. Not yet seen in play, and the world needs a rebuild for the lamps to appear.</li>
+    <li><b>The day/night cycle went from 30 minutes to 20.</b> Measured across the lamp curve: only 28% of
+        the cycle is full daylight and 21% full night, the rest twilight. At 30 minutes a short visit could
+        fall entirely inside night; at 20 it covers enough of the arc to see both.</li>
     <li><b>The guidance arrow became a beam.</b> The floating wedge model and the breadcrumb trail parts
         are gone; the route is now drawn by one beam per segment carrying a scrolling chevron texture,
         anchored to the player at one end and the target at the other. It rebuilds only when the player
