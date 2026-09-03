@@ -97,6 +97,13 @@
        margin-left:5px;vertical-align:1px;white-space:nowrap}
   .tag.client{background:var(--accent-soft);color:var(--accent)}
   .tag.nocut{background:var(--stop-bg);color:var(--stop)}
+  .tag.fixed{background:var(--ok-bg);color:var(--ok)}
+  .who{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:5px;
+       white-space:nowrap;line-height:1.5}
+  .w-now{background:var(--ok-bg);color:var(--ok)}
+  .w-owner{background:var(--stop-bg);color:var(--stop)}
+  .w-art{background:var(--warn-bg);color:var(--warn)}
+  .w-device{background:var(--idle-bg);color:var(--idle)}
 
   ul,ol{margin:8px 0;padding-left:20px} li{margin:5px 0}
   a{color:var(--accent)}
@@ -126,8 +133,20 @@
   <div class="tile warn"><div class="n">3</div><div class="l">Waiting on brand</div></div>
   <div class="tile stop"><div class="n">1</div><div class="l">Needs a decision</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
-  <div class="tile ok"><div class="n">102</div><div class="l">Items in the game</div></div>
+  <div class="tile stop"><div class="n">17</div><div class="l">Open findings</div></div>
   <div class="tile warn"><div class="n">0</div><div class="l">Times played yet</div></div>
+</div>
+
+<div class="note accent">
+  <h3>Reviewed top to bottom on 3 September</h3>
+  <p>Four parallel reviews — safety and cheating, system-by-system conformance, performance, and
+     brand copy — run against the whole game. <b>Four faults were found in the farm loop and fixed
+     the same day; 17 findings remain open.</b> Each one below says whether the build team can act
+     now or whether it is waiting on you.</p>
+  <p><b>Of the 17: seven can be done today</b> with nothing blocking them · <b>seven</b> need a
+     decision or an approval from the brand owner · <b>two</b> need an art instruction · <b>one</b>
+     cannot be settled without testing on a real phone. One of the seven that can be done today
+     also needs a phone afterwards.</p>
 </div>
 
 <div class="note warn">
@@ -204,6 +223,188 @@
 </section>
 
 <section>
+  <h2>Everything found in the 3 September review — and who can act</h2>
+  <p class="lede">A full review of the game against the design document, system by system. Each row
+     says plainly whether the build team can act on it today or whether it is waiting on someone
+     else. Nothing here is a guess — every item was checked directly in the game.</p>
+
+  <div class="legend" style="margin-top:14px">
+    <span><span class="who w-now">DO NOW</span> build team can fix it today, nothing is blocking</span>
+    <span><span class="who w-owner">WAITING ON BRAND OWNER</span> needs your decision or approval</span>
+    <span><span class="who w-art">WAITING ON ART</span> needs artwork or an art instruction</span>
+    <span><span class="who w-device">NEEDS A PHONE</span> cannot be settled without a device test</span>
+  </div>
+
+  <div class="note stop">
+    <h3>Fixed during this review — the farm loop did not match the design document</h3>
+    <p>The owner asked whether the build followed the documented tea-plant cycle. <b>It did not, in
+       four ways, and two of them let resources appear out of nothing.</b> All four are now fixed and
+       verified. Recorded here because they show what a review is for, and because the reward
+       numbers below depend on them.</p>
+  </div>
+
+  <div class="scroller">
+  <table>
+    <thead><tr><th>#</th><th>What was wrong</th><th>Why it mattered</th><th>State</th></tr></thead>
+    <tbody>
+      <tr><td class="id">F1</td>
+        <td>A can could not be poured on a plant that was waiting for water, or on one still
+            growing — only on a fully grown plant.</td>
+        <td>The design document calls the water-or-pour choice <b>the core of the game</b>, the one
+            decision that repeats every round. It did not exist.</td>
+        <td><span class="pill p-ok">FIXED</span></td></tr>
+      <tr><td class="id">F2</td>
+        <td>Rounds that were poured never counted toward the plant's twenty-collection lifespan.
+            Only leaf harvests counted.</td>
+        <td><b>A plant that was only ever poured never aged and never died.</b> One free seed was an
+            endless supply of items — which fed straight into the can problem below.</td>
+        <td><span class="pill p-ok">FIXED</span></td></tr>
+      <tr><td class="id">F3</td>
+        <td>After harvesting, the plant went straight back to growing and produced again with no
+            further watering.</td>
+        <td>Watering was a one-time action at planting instead of a choice every round, so pouring
+            never actually cost the player anything.</td>
+        <td><span class="pill p-ok">FIXED</span></td></tr>
+      <tr><td class="id">F4</td>
+        <td>When a pour finished, the plant resumed growing instead of returning to waiting for
+            water.</td>
+        <td>Same as F3.</td>
+        <td><span class="pill p-ok">FIXED</span></td></tr>
+      <tr><td class="id">—</td>
+        <td><i>Not a fault.</i> Pouring a ready plant keeps the leaves it had already earned.</td>
+        <td>This was briefly mistaken for a loophole during the review. The design document
+            <b>requires</b> it — the leaves are banked automatically and nothing is lost. Recorded
+            so it is not "fixed" by mistake later.</td>
+        <td><span class="pill p-ok">CORRECT</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 class="sub2">Still open — ordered by who is holding it up</h3>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>#</th><th>Finding</th><th>Effect</th><th>Who can act</th></tr></thead>
+    <tbody>
+      <tr><td class="id">M1</td>
+        <td><b>Spare items convert back into more cans than were spent.</b> The design document sets
+            rates that break its own rule forbidding this.</td>
+        <td>Pouring becomes a way to make cans from nothing, and every other use for cans stops
+            mattering. Made worse until today by F2 above.</td>
+        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>One number, three choices</td></tr>
+      <tr><td class="id">M2</td>
+        <td><b>The twelve label colours and the full name list are not approved.</b> 45 foods,
+            46 monster pieces, 3 special recipes — the document requires them approved together as
+            one written set.</td>
+        <td>No artwork can begin.</td>
+        <td><span class="who w-owner">WAITING ON BRAND OWNER</span></td></tr>
+      <tr><td class="id">M3</td>
+        <td><b>64 of 102 items are still stand-ins.</b> Every one already has a finished-looking
+            Thai name and no raw English text reaches players — they simply are not final.</td>
+        <td>The approval in M2 cannot even begin until this list is complete.</td>
+        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>with design</td></tr>
+      <tr><td class="id">M4</td>
+        <td><b>Drink names have no forbidden-pairing list.</b> The four pairings that exist cover
+            monster names only. Drink names combine three words across 18,225 possibilities with
+            nothing beneath the general safety filter.</td>
+        <td>Two individually harmless words could still combine badly in a drink name.</td>
+        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>needs approved pairings</td></tr>
+      <tr><td class="id">M5</td>
+        <td><b>The game name and zone names have never been run through the platform's own text
+            filter</b> for the under-13 audience, and no backup names exist if one is rejected.</td>
+        <td>A rejected zone name late in the project means renaming and re-approving it.</td>
+        <td><span class="who w-owner">WAITING ON BRAND OWNER</span></td></tr>
+      <tr><td class="id">M6</td>
+        <td><b>Two guidance lines say just "ไร่" (farm)</b> where every other zone in the same file
+            is written out in full. They may mean the player's own plot rather than the branded
+            zone.</td>
+        <td>Needs a ruling on which it is — then either a rewrite or an exemption.</td>
+        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>a ruling, not a fix</td></tr>
+      <tr><td class="id">M7</td>
+        <td><b>Monster pieces must share one artwork sheet per group, seven in total,</b> with colour
+            tinted onto a plain grey shape. The artist has not been told.</td>
+        <td>If pieces are made first, all 46 must be redone.</td>
+        <td><span class="who w-art">WAITING ON ART</span><br>free today</td></tr>
+      <tr><td class="id">M8</td>
+        <td><b>A ready plant should sprout three leaves, matching the brand logo.</b> It is currently
+            a grey box that changes size.</td>
+        <td>Correct for this stage of the build, but it is a brand requirement and needs to reach
+            the artist.</td>
+        <td><span class="who w-art">WAITING ON ART</span></td></tr>
+      <tr><td class="id">M9</td>
+        <td><b>Collecting from the ingredient-rain event is broken.</b> A coding error means every
+            attempt fails silently.</td>
+        <td>The feature cannot work at all. It fails safely — nothing is duplicated or lost.
+            One line.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M10</td>
+        <td><b>The campaign keyword allows one guess more than intended</b> — a limit of three gives
+            four.</td>
+        <td>Minor, but it is a limit that exists to be enforced. One character.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M11</td>
+        <td><b>An unused visual-effect file changes player movement speed directly,</b> bypassing the
+            single system that is supposed to own that.</td>
+        <td>Nothing calls it today. If anyone ever did, it would fight the tower effects and leave
+            players moving wrongly. Delete it.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M12</td>
+        <td><b>A money-themed effect pack sits unused in the library,</b> containing spinning coins
+            and flying cash.</td>
+        <td>Nothing uses it, so nothing shows on screen — but connecting it would put money imagery
+            in a game whose brand rules forbid it outright.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M13</td>
+        <td><b>Four pieces of the game do more work every frame than they need to</b> — including one
+            that scans the entire world several times a second on every player's phone, and one that
+            re-sends a player's whole game state four times a second even when a single number
+            changed.</td>
+        <td>Directly threatens the frame-rate target on phones. All four are fixable without moving
+            any budget or invalidating any test.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M14</td>
+        <td><b>One setting sits outside its own allowed range</b> — the only one of 273, and
+            long-standing.</td>
+        <td>Small, but our own record from 2 September wrongly claimed every setting was in range.
+            Checking the game directly is what caught it.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M15</td>
+        <td><b>The busiest scene got heavier, not lighter.</b> Parts loaded around a player standing
+            in town rose from 1,966 to 2,214 since the loading distance was last chosen — and no
+            decorations exist yet. Filling only the twelve nearest farms would add roughly 1,080
+            more, in exactly that spot.</td>
+        <td>The loading distance and the 24-player limit were both set for the old, smaller farm and
+            have never been rechecked.</td>
+        <td><span class="who w-device">NEEDS A PHONE</span></td></tr>
+      <tr><td class="id">M16</td>
+        <td><b>Two of the three required stress tests cannot be run.</b> One has no way to fill the
+            ten display stands automatically; the other has no way to place decorations on 24 farms
+            at all — that tool was never built.</td>
+        <td>These are missing prerequisites, not missing measurements. No device test can happen
+            until they exist.</td>
+        <td><span class="who w-now">DO NOW</span><br>then needs a phone</td></tr>
+      <tr><td class="id">M17</td>
+        <td><b>Every reward number is now out of date.</b> They were measured when 20 plants produced
+            leaves continuously. After the farm fix they no longer do.</td>
+        <td>Must be re-derived — and should be done in one pass together with M1, not twice.</td>
+        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>do it with M1</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note accent">
+    <h3>Two claims in this review were wrong, and were caught by re-checking the game</h3>
+    <p>A reviewer reported that progress saves only every five minutes, breaking a core promise. It
+       does not — the five-minute figure belongs to a third-party component the game does not rely
+       on; the game runs its own <b>30-second</b> save loop. <b>The promise holds.</b></p>
+    <p>An earlier note on this page said the forbidden-word-pairing list was empty. <b>It is not —
+       it holds four pairings</b>, all for monster names. The real gap is narrower and is now
+       recorded correctly as M4 above.</p>
+    <p>Both were caught the same way: by measuring the running game instead of trusting a summary.
+       That is the standard this page is held to.</p>
+  </div>
+</section>
+
+<section>
   <h2>How to read the tables</h2>
   <div class="legend" style="margin-top:14px">
     <span><span class="pill p-ok">DONE</span> built and checked</span>
@@ -227,11 +428,17 @@
     <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
     <tbody>
       <tr><td class="id">ก-1</td>
-        <td class="what">Planting, watering, picking, plant lifespan <span class="tag">changed</span></td>
+        <td class="what">Planting, watering, picking, plant lifespan <span class="tag">changed</span> <span class="tag fixed">fixed 3 Sept</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Plants no longer keep growing while the player is away — one growth step is saved and
-            waits for them. The farm is now five rows of four. Seeds are free from the town centre.
-            Five different looks as a plant grows and dies back.</td></tr>
+        <td><b>This did not match the design document and was rebuilt on 3 September.</b> Four
+            faults, two of which let resources appear from nothing — full detail in the mismatch
+            table below. It now follows the documented cycle: sow, then at "waiting for water" the
+            player picks watering (leaves) or pouring (weird items); pouring is also allowed while
+            growing and when ready; after harvesting, and after a pour finishes, the plant returns
+            to waiting for water; twenty collections of any kind and the plant is spent.<br><br>
+            Plants do not keep growing while a player is away — one growth step is saved and waits.
+            Five rows of four. Seeds free from the town centre. Five looks as a plant grows and dies
+            back.</td></tr>
       <tr><td class="id">ก-2</td>
         <td class="what">Pouring, and what drops from it <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
@@ -276,10 +483,12 @@
         <td class="what">Naming, and the word safety check <span class="tag nocut">never cut</span></td>
         <td><span class="pill p-warn">WAITING</span></td>
         <td>Players never type anything — every name is assembled from an approved word list and
-            checked at four separate points. <b>The list of forbidden word pairings is still
-            empty</b>, so that last layer has never been tested against real examples. Names are
-            stored in a way that lets the word list grow later without renaming anything a player
-            has already made.</td></tr>
+            checked at four separate points, and re-checked every time a name is displayed rather
+            than trusting what was saved. <b>The list of forbidden word pairings covers monster
+            names only — four pairs — and has nothing at all for drink names</b>, which combine an
+            ingredient, a modifier and a second ingredient across 18,225 possibilities with no
+            pairing safety net beneath the general filter. Names are stored in a way that lets the
+            word list grow later without renaming anything a player has already made.</td></tr>
       <tr><td class="id">ข-4</td><td class="what">Drawing the cans</td>
         <td><span class="pill p-ok">DONE</span></td>
         <td>Five fully detailed cans on screen at once is the limit, and it is exactly enough.</td></tr>
@@ -564,7 +773,7 @@
       <tr><td>Growth and daily timers run on the game's clock, never the player's</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>The world loads in around the player as they walk</td><td><span class="pill p-warn">on, distance provisional</span></td></tr>
       <tr><td>Progress saves constantly and cannot be lost or duplicated</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Every piece of text is checked for safety, four times over</td><td><span class="pill p-warn">on, one list still empty</span></td></tr>
+      <tr><td>Every piece of text is checked for safety, four times over</td><td><span class="pill p-warn">on, no pairings for drink names</span></td></tr>
       <tr><td>One world — players walk everywhere, no teleporting, no loading screens</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>Monsters are drawn on each player's device, never kept in the shared world</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>Anything valuable is saved in one go, so a disconnect cannot lose or duplicate it</td><td><span class="pill p-ok">HOLDS</span></td></tr>
