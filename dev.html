@@ -983,6 +983,16 @@
     <li><b>Two reviewer claims disproved by re-measurement</b> — see the corrections panel above.</li>
     <li><b>Fixed both team command files</b> (<code>/team</code>, <code>/review-team</code>), which
         still named the superseded GDD v2.0 as spec authority and cited its old section numbers.</li>
+    <li><b>A save-blocking defect found and closed.</b> The 9 &rarr; 10 migration called a helper that
+        was declared below it in the same module, so the call resolved to a nil global and threw.
+        Every save still on schema 9 failed to migrate and the player was kicked with
+        &ldquo;Could not prepare your save&rdquo;. The helper moved above the migration table; the
+        migration now runs clean and carries legacy heart counts across into the 4-emoji reaction map.
+        No data was lost &mdash; the loader ends the session before writing.</li>
+    <li><b>The guidance arrow became a beam.</b> The floating wedge model and the breadcrumb trail parts
+        are gone; the route is now drawn by one beam per segment carrying a scrolling chevron texture,
+        anchored to the player at one end and the target at the other. It rebuilds only when the player
+        crosses a waypoint, so it costs nothing per frame. Not yet seen in a play session.</li>
   </ul>
 
   <h3 class="sub2">2 September 2026 — Phase 1c, and the catalogue</h3>
