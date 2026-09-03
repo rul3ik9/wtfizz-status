@@ -2,7 +2,8 @@
 
 Live status board for all 35 contracted systems, 15 player screens and the 1 admin tool.
 
-**Site:** https://rul3ik9.github.io/wtfizz-status/
+**Client status page:** https://rul3ik9.github.io/wtfizz-status/
+**Engineering log:** https://rul3ik9.github.io/wtfizz-status/dev.html
 
 ## What this is
 
@@ -12,6 +13,19 @@ and what is the evidence.*
 
 It is a **summary view**. The detailed records stay in the private project repository under `docs/`
 — `PROGRESS.md`, `INSTANCE-MANIFEST.md`, `CONFIG.md`.
+
+## Two audiences, two pages
+
+ is for the client and the agency. It carries the same system verdicts as the
+engineering page, in plain language, with no defect log, no module names, and no verification
+detail.
+
+ is internal. It carries everything: the module inventory, every open finding, the
+review history, the corrections, and the standing caveat that no Play session has been run.
+
+**The client page must never assert that something is tested or verified.** Leaving internal QA
+detail out is normal; claiming coverage that does not exist is not. Say what is built, what is in
+progress, and what is waiting on a decision — nothing more.
 
 ## Update protocol — read before editing
 
@@ -51,7 +65,8 @@ marketplace fee analysis, and the Luau source are deliberately not here.
 ## Structure
 
 ```
-index.html   the whole site — single file, no build step, no dependencies
+index.html   client-facing status board — system verdicts and what is waiting on the brand owner
+dev.html     engineering log — modules, defects, review findings, verification evidence, work log
 README.md    this file
 ```
 

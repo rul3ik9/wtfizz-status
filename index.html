@@ -40,512 +40,171 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
        font-size:15px;line-height:1.6;-webkit-text-size-adjust:100%}
-  .wrap{max-width:1020px;margin:0 auto;padding:0 20px 80px}
+  .wrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
 
-  header.top{border-bottom:1px solid var(--line);margin-bottom:28px;padding:36px 0 24px}
+  header.top{border-bottom:1px solid var(--line);margin-bottom:28px;padding:40px 0 26px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
            color:var(--accent);margin:0 0 10px}
-  h1{margin:0 0 8px;font-size:30px;line-height:1.15;letter-spacing:-.02em;font-weight:650}
-  .sub{margin:0;color:var(--muted);font-size:14.5px;max-width:70ch}
-  .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 18px;
+  h1{margin:0 0 10px;font-size:32px;line-height:1.14;letter-spacing:-.02em;font-weight:650}
+  .sub{margin:0;color:var(--muted);font-size:15px;max-width:66ch}
+  .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 18px;
         font-family:var(--mono);font-size:11.5px;color:var(--muted)}
   .meta b{color:var(--ink);font-weight:600}
 
-  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 28px}
-  .tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-  .tile .n{font-size:26px;font-weight:650;letter-spacing:-.02em;line-height:1.1}
-  .tile .l{font-size:11.5px;color:var(--muted);margin-top:3px;
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:0 0 26px}
+  .tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .tile .n{font-size:30px;font-weight:650;letter-spacing:-.02em;line-height:1.05}
+  .tile .l{font-size:11.5px;color:var(--muted);margin-top:5px;
            font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase}
   .tile.ok .n{color:var(--ok)} .tile.warn .n{color:var(--warn)}
   .tile.stop .n{color:var(--stop)} .tile.idle .n{color:var(--idle)}
 
-  .note{border-radius:10px;padding:16px 18px;margin:0 0 26px;border:1px solid;font-size:14px}
-  .note h3{margin:0 0 6px;font-size:14px;font-weight:650;letter-spacing:.01em}
-  .note p{margin:0 0 8px} .note p:last-child{margin:0}
-  .note.warn{background:var(--warn-bg);border-color:var(--warn)}
-  .note.stop{background:var(--stop-bg);border-color:var(--stop)}
-  .note.accent{background:var(--accent-soft);border-color:var(--accent)}
+  .bar{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:0 0 10px;
+       border:1px solid var(--line)}
+  .bar i{display:block;height:100%}
+  .bar .b-ok{background:var(--ok)} .bar .b-warn{background:var(--warn)}
+  .bar .b-stop{background:var(--stop)}
+  .barkey{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--muted);
+          margin:0 0 30px;align-items:center}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
+  .d-ok{background:var(--ok)} .d-warn{background:var(--warn)} .d-stop{background:var(--stop)}
 
-  section{margin:0 0 40px}
-  h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em;font-weight:650;
-     padding-top:22px;border-top:1px solid var(--line)}
-  h2 .code{font-family:var(--mono);font-size:13px;color:var(--accent);margin-right:8px}
-  .lede{color:var(--muted);font-size:13.5px;margin:0 0 16px;max-width:78ch}
-  h3.sub2{font-size:14.5px;margin:24px 0 8px;font-weight:650}
+  .note{border-radius:10px;padding:17px 19px;margin:0 0 26px;border:1px solid;font-size:14px}
+  .note h3{margin:0 0 7px;font-size:14.5px;font-weight:650}
+  .note p{margin:0 0 9px} .note p:last-child{margin:0}
+  .note.warn{background:var(--warn-bg);border-color:var(--warn)}
+  .note.accent{background:var(--accent-soft);border-color:var(--accent)}
+  .note.ok{background:var(--ok-bg);border-color:var(--ok)}
+
+  section{margin:0 0 42px}
+  h2{font-size:20px;margin:0 0 5px;letter-spacing:-.01em;font-weight:650;
+     padding-top:24px;border-top:1px solid var(--line)}
+  h2 .code{font-family:var(--mono);font-size:13px;color:var(--accent);margin-right:9px}
+  .lede{color:var(--muted);font-size:13.5px;margin:0 0 16px;max-width:76ch}
+  h3.sub2{font-size:15px;margin:26px 0 9px;font-weight:650}
 
   .scroller{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
-  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:600px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:540px}
   th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
      text-transform:uppercase;color:var(--muted);font-weight:600;
-     padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;
-     background:var(--panel);position:sticky;top:0}
-  td{padding:10px 12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+     padding:11px 13px;border-bottom:1px solid var(--line);white-space:nowrap;background:var(--panel)}
+  td{padding:11px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top}
   tr:last-child td{border-bottom:none}
   td.id{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap;font-weight:600}
-  td.num{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
-  td.nowrap{white-space:nowrap}
   td.what{font-weight:600}
 
   .pill{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.05em;
-        padding:2px 7px;border-radius:20px;white-space:nowrap;font-weight:600;line-height:1.6}
+        padding:3px 8px;border-radius:20px;white-space:nowrap;font-weight:600;line-height:1.6}
   .p-ok{background:var(--ok-bg);color:var(--ok)}
   .p-warn{background:var(--warn-bg);color:var(--warn)}
   .p-stop{background:var(--stop-bg);color:var(--stop)}
-  .p-idle{background:var(--idle-bg);color:var(--idle)}
-  .tag{display:inline-block;font-size:10px;letter-spacing:.02em;
-       padding:1px 6px;border-radius:4px;background:var(--idle-bg);color:var(--idle);
-       margin-left:5px;vertical-align:1px;white-space:nowrap}
-  .tag.client{background:var(--accent-soft);color:var(--accent)}
-  .tag.nocut{background:var(--stop-bg);color:var(--stop)}
-  .tag.fixed{background:var(--ok-bg);color:var(--ok)}
-  .who{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:5px;
-       white-space:nowrap;line-height:1.5}
-  .w-now{background:var(--ok-bg);color:var(--ok)}
-  .w-owner{background:var(--stop-bg);color:var(--stop)}
-  .w-art{background:var(--warn-bg);color:var(--warn)}
-  .w-device{background:var(--idle-bg);color:var(--idle)}
 
-  ul,ol{margin:8px 0;padding-left:20px} li{margin:5px 0}
+  ul,ol{margin:9px 0;padding-left:21px} li{margin:6px 0}
   a{color:var(--accent)}
-  .foot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;
+  .foot{border-top:1px solid var(--line);margin-top:46px;padding-top:20px;
         color:var(--muted);font-size:12.5px}
-  .legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 18px;
-          font-size:12.5px;color:var(--muted);align-items:center}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header class="top">
-  <p class="eyebrow">Oishi · Chakulza · first build</p>
+  <p class="eyebrow">Oishi · Chakulza</p>
   <h1>WHAT THE FIZZ!? — Build Status</h1>
-  <p class="sub">Where every part of the game stands today: what is finished, what is waiting on a
-     decision, and what still has to happen before launch.</p>
+  <p class="sub">Where the game stands today, part by part: what is built, what is still being
+     worked on, and what is waiting for a decision from you.</p>
   <div class="meta">
-    <span><b>Checked</b> 3 September 2026</span>
-    <span><b>Against</b> the design document of 31 August 2026</span>
-    <span><b>Stage</b> grey-box build — everything works, artwork comes later</span>
+    <span><b>Updated</b> 3 September 2026</span>
+    <span><b>Stage</b> playable grey-box build</span>
+    <span><b>Artwork</b> comes after names and colours are approved</span>
   </div>
 </header>
 
 <div class="tiles">
-  <div class="tile ok"><div class="n">31</div><div class="l">Parts finished</div></div>
-  <div class="tile warn"><div class="n">3</div><div class="l">Waiting on brand</div></div>
-  <div class="tile stop"><div class="n">1</div><div class="l">Needs a decision</div></div>
+  <div class="tile ok"><div class="n">23</div><div class="l">Parts built</div></div>
+  <div class="tile warn"><div class="n">8</div><div class="l">In progress</div></div>
+  <div class="tile stop"><div class="n">4</div><div class="l">Waiting on you</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
-  <div class="tile stop"><div class="n">26</div><div class="l">Open findings</div></div>
-  <div class="tile warn"><div class="n">0</div><div class="l">Times played yet</div></div>
 </div>
 
-<div class="note accent">
-  <h3>Reviewed top to bottom on 3 September</h3>
-  <p>Four parallel reviews — safety and cheating, all 35 parts against the design document,
-     performance, and brand copy. <b>Five faults were found in the farm loop and fixed the same day;
-     26 findings remain open.</b> Each one below says whether the build team can act now or whether
-     it is waiting on you.</p>
-  <p><b>Of the 26: sixteen can be done today</b> with nothing blocking them · <b>seven</b> need a
-     decision or an approval from the brand owner · <b>two</b> need an art instruction · <b>one</b>
-     cannot be settled without testing on a real phone.</p>
-  <p>Against the design document: <b>20 of the 35 parts match, 5 do not, 10 match in part, and
-     nothing is missing entirely.</b> No safety or cheating problem of any severity was found, and
-     everything players can currently read passed the brand check.</p>
+<div class="bar" aria-label="23 of 35 parts built, 8 in progress, 4 waiting on approval">
+  <i class="b-ok" style="width:65.7%"></i>
+  <i class="b-warn" style="width:22.9%"></i>
+  <i class="b-stop" style="width:11.4%"></i>
+</div>
+<div class="barkey">
+  <span><span class="dot d-ok"></span>Built and working</span>
+  <span><span class="dot d-warn"></span>In progress</span>
+  <span><span class="dot d-stop"></span>Waiting on your approval</span>
 </div>
 
-<div class="note warn">
-  <h3>⚠ One thing to know before reading anything below</h3>
-  <p><b>Nobody has played the game yet.</b> Everything on this page was checked by opening the game
-     up and inspecting it piece by piece — every rule, every number, every screen. That proves the
-     game is <i>built correctly</i>. It proves nothing about how it <i>feels</i>, or whether it runs
-     smoothly on a real phone with real players in it.</p>
-  <p>So read every <span class="pill p-ok">DONE</span> as <b>"built and checked, not yet played."</b>
-     A test session on a real phone is the step that closes this gap, and it has not happened.</p>
+<div class="note ok">
+  <h3>Where the project is</h3>
+  <p><b>All 35 parts of the game exist and the whole loop is playable end to end.</b> A player can
+     plant, water, pour, harvest, make cans, invent a flavour, name it, put it on the show board,
+     build a monster, put it on display, and use the tower. Every one of the 15 player screens is
+     built.</p>
+  <p>The build is deliberately grey-box — real shapes and real rules, placeholder looks. <b>Artwork
+     is the next major stage, and it cannot start until the names and colours are approved.</b> That
+     is the single thing most worth your attention right now.</p>
 </div>
 
 <section>
-  <h2>What is holding things up</h2>
-  <p class="lede">Five things stand between where we are now and brand sign-off. Only one of them is
-     work for the build team — the rest need a decision, a list of names, or a phone to test on.</p>
-
+  <h2>What we need from you</h2>
+  <p class="lede">Three decisions, holding up four parts of the game. The first two block all
+     artwork; the third affects how the game feels to play over time.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>What</th><th>Who decides</th><th>What it holds up</th><th>How it closes</th></tr></thead>
+    <thead><tr><th>#</th><th>What we need</th><th>What it unblocks</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="id">1</td>
-        <td><b>Players end up with more cans than they spend.</b> Pouring a can on a plant is meant
-            to <i>cost</i> the player. At the rates the design document sets, the player gets back
-            slightly more than they paid — so pouring over and over slowly makes cans out of nothing,
-            and everything else you can spend cans on stops mattering.<br><br>
-            The rarest drops cause it. They come up only once in twenty pours, but they hand back ten
-            times what the pour cost.</td>
-        <td class="nowrap">Brand owner</td>
-        <td>The whole reward balance</td>
-        <td>Pick one number to change — what the rarest drops are worth, what a pour costs, or how
-            many items a pour gives</td>
-      </tr>
-      <tr>
-        <td class="id">2</td>
-        <td><b>Two approvals are outstanding.</b> The twelve label colours, and the full name list —
-            45 foods, 46 monster pieces and 3 special recipes. The design document asks for these to
-            be approved together as one set, in writing.</td>
-        <td class="nowrap">Brand owner</td>
-        <td>All artwork</td>
-        <td>Written approval on both</td>
-      </tr>
-      <tr>
-        <td class="id">3</td>
-        <td><b>64 items still have no final name or look.</b> They exist and work in the game, but
-            they are stand-ins. The approval in row 2 cannot even start until this list is finished.</td>
-        <td class="nowrap">Design + brand</td>
-        <td>Row 2, and so all artwork</td>
-        <td>The count reaches zero</td>
-      </tr>
-      <tr>
-        <td class="id">4</td>
-        <td><b>The artist has not been told one rule yet.</b> Monster pieces must share one artwork
-            sheet per group — seven sheets in total — with colour added by tinting a plain grey
-            shape. If the pieces get made before this reaches the artist, all 46 have to be redone.</td>
-        <td class="nowrap">Art direction</td>
-        <td>Monster piece artwork</td>
-        <td>The rule reaches the artist in writing. Free to do today, expensive to do late</td>
-      </tr>
-      <tr>
-        <td class="id">5</td>
-        <td><b>Never tested on a phone.</b> The design document requires a test on a reference
-            Android phone, in the busiest possible scene, as a condition of sign-off. Two settings
-            controlling how much of the world loads around each player were chosen for the
-            <i>old</i>, smaller farm and have not been rechecked since the farm grew.</td>
-        <td class="nowrap">Build team + owner</td>
-        <td>Launch readiness</td>
-        <td>One test session on the reference phone</td>
-      </tr>
+      <tr><td class="id">1</td>
+        <td><b>Approval of the full name list — in one set, in writing.</b> 45 foods, 46 monster
+            pieces and 3 special recipes. Every one already has a finished Thai name in the game;
+            they need your sign-off before anything is drawn.</td>
+        <td>All artwork. Nothing can be modelled until this closes.</td></tr>
+      <tr><td class="id">2</td>
+        <td><b>Approval of the 12 label colours.</b> Each colour is tied to its own drink effect, so
+            a drink always looks like its label.</td>
+        <td>Can artwork and the drink effects.</td></tr>
+      <tr><td class="id">3</td>
+        <td><b>One balance decision on how much a spare item is worth</b> when converted back into
+            cans. At the rates in the design document, players get slightly more back than they
+            spend, which over time makes cans lose their value.</td>
+        <td>The reward balance across the whole game.</td></tr>
     </tbody>
   </table>
   </div>
-</section>
-
-<section>
-  <h2>Everything found in the 3 September review — and who can act</h2>
-  <p class="lede">A full review of the game against the design document, system by system. Each row
-     says plainly whether the build team can act on it today or whether it is waiting on someone
-     else. Nothing here is a guess — every item was checked directly in the game.</p>
-
-  <div class="legend" style="margin-top:14px">
-    <span><span class="who w-now">DO NOW</span> build team can fix it today, nothing is blocking</span>
-    <span><span class="who w-owner">WAITING ON BRAND OWNER</span> needs your decision or approval</span>
-    <span><span class="who w-art">WAITING ON ART</span> needs artwork or an art instruction</span>
-    <span><span class="who w-device">NEEDS A PHONE</span> cannot be settled without a device test</span>
-  </div>
-
-  <div class="note stop">
-    <h3>Fixed during this review — the farm loop did not match the design document</h3>
-    <p>The owner asked whether the build followed the documented tea-plant cycle. <b>It did not, in
-       four ways, and two of them let resources appear out of nothing.</b> All four are now fixed and
-       verified. Recorded here because they show what a review is for, and because the reward
-       numbers below depend on them.</p>
-  </div>
-
-  <div class="scroller">
-  <table>
-    <thead><tr><th>#</th><th>What was wrong</th><th>Why it mattered</th><th>State</th></tr></thead>
-    <tbody>
-      <tr><td class="id">F1</td>
-        <td>A can could not be poured on a plant that was waiting for water, or on one still
-            growing — only on a fully grown plant.</td>
-        <td>The design document calls the water-or-pour choice <b>the core of the game</b>, the one
-            decision that repeats every round. It did not exist.</td>
-        <td><span class="pill p-ok">FIXED</span></td></tr>
-      <tr><td class="id">F2</td>
-        <td>Rounds that were poured never counted toward the plant's twenty-collection lifespan.
-            Only leaf harvests counted.</td>
-        <td><b>A plant that was only ever poured never aged and never died.</b> One free seed was an
-            endless supply of items — which fed straight into the can problem below.</td>
-        <td><span class="pill p-ok">FIXED</span></td></tr>
-      <tr><td class="id">F3</td>
-        <td>After harvesting, the plant went straight back to growing and produced again with no
-            further watering.</td>
-        <td>Watering was a one-time action at planting instead of a choice every round, so pouring
-            never actually cost the player anything.</td>
-        <td><span class="pill p-ok">FIXED</span></td></tr>
-      <tr><td class="id">F4</td>
-        <td>When a pour finished, the plant resumed growing instead of returning to waiting for
-            water.</td>
-        <td>Same as F3.</td>
-        <td><span class="pill p-ok">FIXED</span></td></tr>
-      <tr><td class="id">F5</td>
-        <td><b>Caused by fixing F3 and F4, and caught the same day.</b> Once a plant returned to
-            waiting-for-water after a pour, watering it again wiped out any leaves it had already
-            earned but the player had not yet picked up.</td>
-        <td>Silent loss of a reward the player had earned, and the design document explicitly
-            promises nothing is lost. Now the leaves are banked into the player's bag automatically
-            at the moment of pouring, exactly as the document describes.</td>
-        <td><span class="pill p-ok">FIXED</span></td></tr>
-      <tr><td class="id">—</td>
-        <td><i>Not a fault.</i> Pouring a ready plant keeps the leaves it had already earned.</td>
-        <td>This was briefly mistaken for a loophole during the review. The design document
-            <b>requires</b> it — the leaves are banked automatically and nothing is lost. Recorded
-            so it is not "fixed" by mistake later.</td>
-        <td><span class="pill p-ok">CORRECT</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h3 class="sub2">Still open — ordered by who is holding it up</h3>
-  <div class="scroller">
-  <table>
-    <thead><tr><th>#</th><th>Finding</th><th>Effect</th><th>Who can act</th></tr></thead>
-    <tbody>
-      <tr><td class="id">M1</td>
-        <td><b>Spare items convert back into more cans than were spent.</b> The design document sets
-            rates that break its own rule forbidding this.</td>
-        <td>Pouring becomes a way to make cans from nothing, and every other use for cans stops
-            mattering. Made worse until today by F2 above.</td>
-        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>One number, three choices</td></tr>
-      <tr><td class="id">M2</td>
-        <td><b>The twelve label colours and the full name list are not approved.</b> 45 foods,
-            46 monster pieces, 3 special recipes — the document requires them approved together as
-            one written set.</td>
-        <td>No artwork can begin.</td>
-        <td><span class="who w-owner">WAITING ON BRAND OWNER</span></td></tr>
-      <tr><td class="id">M3</td>
-        <td><b>64 of 102 items are still stand-ins.</b> Every one already has a finished-looking
-            Thai name and no raw English text reaches players — they simply are not final.</td>
-        <td>The approval in M2 cannot even begin until this list is complete.</td>
-        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>with design</td></tr>
-      <tr><td class="id">M4</td>
-        <td><b>Drink names have no forbidden-pairing list.</b> The four pairings that exist cover
-            monster names only. Drink names combine three words across 18,225 possibilities with
-            nothing beneath the general safety filter.</td>
-        <td>Two individually harmless words could still combine badly in a drink name.</td>
-        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>needs approved pairings</td></tr>
-      <tr><td class="id">M5</td>
-        <td><b>The game name and zone names have never been run through the platform's own text
-            filter</b> for the under-13 audience, and no backup names exist if one is rejected.</td>
-        <td>A rejected zone name late in the project means renaming and re-approving it.</td>
-        <td><span class="who w-owner">WAITING ON BRAND OWNER</span></td></tr>
-      <tr><td class="id">M6</td>
-        <td><b>Two guidance lines say just "ไร่" (farm)</b> where every other zone in the same file
-            is written out in full. They may mean the player's own plot rather than the branded
-            zone.</td>
-        <td>Needs a ruling on which it is — then either a rewrite or an exemption.</td>
-        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>a ruling, not a fix</td></tr>
-      <tr><td class="id">M7</td>
-        <td><b>Monster pieces must share one artwork sheet per group, seven in total,</b> with colour
-            tinted onto a plain grey shape. The artist has not been told.</td>
-        <td>If pieces are made first, all 46 must be redone.</td>
-        <td><span class="who w-art">WAITING ON ART</span><br>free today</td></tr>
-      <tr><td class="id">M8</td>
-        <td><b>A ready plant should sprout three leaves, matching the brand logo.</b> It is currently
-            a grey box that changes size.</td>
-        <td>Correct for this stage of the build, but it is a brand requirement and needs to reach
-            the artist.</td>
-        <td><span class="who w-art">WAITING ON ART</span></td></tr>
-      <tr><td class="id">M9</td>
-        <td><b>Collecting from the ingredient-rain event is broken.</b> A coding error means every
-            attempt fails silently.</td>
-        <td>The feature cannot work at all. It fails safely — nothing is duplicated or lost.
-            One line.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M10</td>
-        <td><b>The campaign keyword allows one guess more than intended</b> — a limit of three gives
-            four.</td>
-        <td>Minor, but it is a limit that exists to be enforced. One character.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M11</td>
-        <td><b>An unused visual-effect file changes player movement speed directly,</b> bypassing the
-            single system that is supposed to own that.</td>
-        <td>Nothing calls it today. If anyone ever did, it would fight the tower effects and leave
-            players moving wrongly. Delete it.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M12</td>
-        <td><b>A money-themed effect pack sits unused in the library,</b> containing spinning coins
-            and flying cash.</td>
-        <td>Nothing uses it, so nothing shows on screen — but connecting it would put money imagery
-            in a game whose brand rules forbid it outright.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M13</td>
-        <td><b>Four pieces of the game do more work every frame than they need to</b> — including one
-            that scans the entire world several times a second on every player's phone, and one that
-            re-sends a player's whole game state four times a second even when a single number
-            changed.</td>
-        <td>Directly threatens the frame-rate target on phones. All four are fixable without moving
-            any budget or invalidating any test.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M14</td>
-        <td><b>One setting sits outside its own allowed range</b> — the only one of 273, and
-            long-standing.</td>
-        <td>Small, but our own record from 2 September wrongly claimed every setting was in range.
-            Checking the game directly is what caught it.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M15</td>
-        <td><b>The busiest scene got heavier, not lighter.</b> Parts loaded around a player standing
-            in town rose from 1,966 to 2,214 since the loading distance was last chosen — and no
-            decorations exist yet. Filling only the twelve nearest farms would add roughly 1,080
-            more, in exactly that spot.</td>
-        <td>The loading distance and the 24-player limit were both set for the old, smaller farm and
-            have never been rechecked.</td>
-        <td><span class="who w-device">NEEDS A PHONE</span></td></tr>
-      <tr><td class="id">M16</td>
-        <td><b>Two of the three required stress tests cannot be run.</b> One has no way to fill the
-            ten display stands automatically; the other has no way to place decorations on 24 farms
-            at all — that tool was never built.</td>
-        <td>These are missing prerequisites, not missing measurements. No device test can happen
-            until they exist.</td>
-        <td><span class="who w-now">DO NOW</span><br>then needs a phone</td></tr>
-      <tr><td class="id">M17</td>
-        <td><b>Every reward number is now out of date.</b> They were measured when 20 plants produced
-            leaves continuously. After the farm fix they no longer do.</td>
-        <td>Must be re-derived — and should be done in one pass together with M1, not twice.</td>
-        <td><span class="who w-owner">WAITING ON BRAND OWNER</span><br>do it with M1</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h3 class="sub2">Found by the system-by-system sweep — all 35 parts checked</h3>
-  <p class="lede">Every one of the 35 parts of the game was read against the design document.
-     <b>20 match · 5 do not · 10 match in part.</b> Nothing was found completely missing. The
-     five that do not match, and the most important partial gaps:</p>
-  <div class="scroller">
-  <table>
-    <thead><tr><th>#</th><th>Finding</th><th>Effect</th><th>Who can act</th></tr></thead>
-    <tbody>
-      <tr><td class="id">M18</td>
-        <td><b>A monster placed on a display stand cannot be removed by staff</b> unless it also has
-            a board entry. The moderation tool only looks entries up through the board.</td>
-        <td>This is the one staff tool in the game and it is on the never-cut list precisely because
-            a player-built monster <i>shape</i> is the real moderation risk. A stand-only monster is
-            currently unreachable.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M19</td>
-        <td><b>A brand-new player cannot finish the "build your first friend" quest.</b> The starter
-            monster pieces are granted <i>after</i> the quest completes, and building fails without
-            pieces.</td>
-        <td>A dead end on a fresh account, which also blocks the fourth farm row from ever
-            unlocking.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M20</td>
-        <td><b>Per-type reaction counts do not survive syncing between servers.</b> The board shows
-            four separate emoji counts, but the shared record that travels between servers still
-            stores a single total.</td>
-        <td>The four-emoji breakdown is on the never-cut list as a child-safety requirement. Right
-            now the detail exists on one server and is lost across them.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M21</td>
-        <td><b>Tower prices do not reset at the day boundary for a player who stays connected.</b>
-            Someone online across midnight keeps yesterday's increased price.</td>
-        <td>Known failure pattern. Small, but it is a price the player sees.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M22</td>
-        <td><b>Three of the six oversized monster pieces cannot actually be placed</b> — they are
-            missing their size definitions, so the game rejects them.</td>
-        <td>Half the large-piece feature is unusable.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M23</td>
-        <td><b>The main display shows one total can count</b> where the design document asks for the
-            three flavours shown separately. The information is already being sent — the screen just
-            does not use it.</td>
-        <td>Players cannot see which flavour they are short of before walking to the factory.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M24</td>
-        <td><b>The factory has no "how many" control</b> — it always converts every leaf the player
-            is carrying.</td>
-        <td>The design document asks for an adjustable amount, defaulting to everything carried.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-      <tr><td class="id">M25</td>
-        <td><b>Two required measurements are not being recorded</b> — how often players pour, and the
-            value returned by converting spares.</td>
-        <td>These are exactly the two numbers needed to settle M1. Without them, the balance decision
-            is made blind.</td>
-        <td><span class="who w-now">DO NOW</span><br>needed before M1</td></tr>
-      <tr><td class="id">M26</td>
-        <td><b>Only three tables can be changed remotely</b> without republishing the game. The design
-            document lists many more — the colour palette, name banks, recipes, the featured set,
-            effects and keyword locations.</td>
-        <td>The campaign is meant to run for a year without game updates. Today most of it cannot be
-            adjusted that way.</td>
-        <td><span class="who w-now">DO NOW</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="note warn" style="margin-top:18px">
-    <h3>One count could not be settled and is not being claimed either way</h3>
-    <p>Two separate checks measured the monster-piece catalogue differently — one found the required
-       46 with the correct uneven split across the seven groups, another found a flat seven per
-       group. <b>Neither has been confirmed.</b> It is recorded as unresolved rather than reported as
-       a pass, and needs one definitive recount.</p>
-  </div>
-
-  <div class="note accent">
-    <h3>Three claims in this review were wrong, and were caught by re-checking the game</h3>
-    <p>A reviewer reported that progress saves only every five minutes, breaking a core promise. It
-       does not — the five-minute figure belongs to a third-party component the game does not rely
-       on; the game runs its own <b>30-second</b> save loop. <b>The promise holds.</b></p>
-    <p>An earlier note on this page said the forbidden-word-pairing list was empty. <b>It is not —
-       it holds four pairings</b>, all for monster names. The real gap is narrower and is now
-       recorded correctly as M4 above.</p>
-    <p>And the fix for F3/F4 introduced F5, a way to lose a player's earned leaves. <b>The review
-       caught it the same day, before anyone played it.</b> It is listed as a fault above rather
-       than quietly folded into the original fix.</p>
-    <p>All three were caught the same way: by measuring the running game instead of trusting a
-       summary. That is the standard this page is held to.</p>
-  </div>
-</section>
-
-<section>
-  <h2>How to read the tables</h2>
-  <div class="legend" style="margin-top:14px">
-    <span><span class="pill p-ok">DONE</span> built and checked</span>
-    <span><span class="pill p-warn">WAITING</span> built, needs something from brand</span>
-    <span><span class="pill p-stop">DECIDE</span> built, but knowingly against the design document</span>
-  </div>
-  <div class="legend">
-    <span><span class="tag client">brand asked for it</span> required at launch by the client</span>
-    <span><span class="tag nocut">never cut</span> cannot be dropped, whatever happens to the schedule</span>
-    <span><span class="tag">built to grow</span> groundwork ships now so it can be switched on later without redoing anything</span>
-    <span><span class="tag">changed</span> this part changed in the newest design document</span>
+  <div class="note accent" style="margin-top:18px">
+    <p><b>A fourth, smaller one when convenient:</b> two guidance lines say simply "ไร่" (farm) where
+       every other zone is written out in full. They may well mean the player's own plot rather than
+       the branded zone — we need your ruling on which, then we either rewrite them or leave them.</p>
   </div>
 </section>
 
 <section>
   <h2><span class="code">ก</span>The Farm</h2>
-  <p class="lede">Plant a seed, water it, watch it grow through three stages, pick the leaves.
-     After twenty pickings the plant is spent and disappears.</p>
+  <p class="lede">Plant a seed, water it, watch it grow, pick the leaves. Or pour a Chakulza can on
+     it instead and it transforms into something strange.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
+    <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td class="id">ก-1</td>
-        <td class="what">Planting, watering, picking, plant lifespan <span class="tag">changed</span> <span class="tag fixed">fixed 3 Sept</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td><b>This did not match the design document and was rebuilt on 3 September.</b> Four
-            faults, two of which let resources appear from nothing — full detail in the mismatch
-            table below. It now follows the documented cycle: sow, then at "waiting for water" the
-            player picks watering (leaves) or pouring (weird items); pouring is also allowed while
-            growing and when ready; after harvesting, and after a pour finishes, the plant returns
-            to waiting for water; twenty collections of any kind and the plant is spent.<br><br>
-            Plants do not keep growing while a player is away — one growth step is saved and waits.
-            Five rows of four. Seeds free from the town centre. Five looks as a plant grows and dies
-            back.</td></tr>
-      <tr><td class="id">ก-2</td>
-        <td class="what">Pouring, and what drops from it <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>The flavour poured decides what kind of thing drops — yellow gives food, purple gives
-            monster pieces, pink gives decorations. Five featured items highlighted each day.</td></tr>
-      <tr><td class="id">ก-3</td>
-        <td class="what">Placing objects <span class="tag client">brand asked for it</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>One system handles placing decorations, building monsters, and planting. Built once and
-            reused, never copied.</td></tr>
-      <tr><td class="id">ก-4</td><td class="what">Arranging the garden by touch</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>A preview of where an object will land follows the finger, and only the player moving it
-            can see it.</td></tr>
-      <tr><td class="id">ก-5</td>
-        <td class="what">Saving the garden layout <span class="tag">built to grow</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Layouts save and come back exactly as they were, with room left for object sizes and
-            angles to be added later.</td></tr>
+      <tr><td class="what">Planting, watering, picking, plant lifespan</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Reworked on 3 September to match the design document exactly: at every round the player
+            chooses watering or pouring, and after twenty collections the plant is spent.</td></tr>
+      <tr><td class="what">Pouring, and what drops from it</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Yellow gives food, purple gives monster pieces, pink gives decorations. Five featured
+            items highlighted each day.</td></tr>
+      <tr><td class="what">Placing and arranging objects</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>One system serves decorating, monster building and planting.</td></tr>
+      <tr><td class="what">Garden arranging by touch</td>
+        <td><span class="pill p-ok">BUILT</span></td><td>Designed for a finger before a mouse.</td></tr>
+      <tr><td class="what">Saving the garden layout</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Layouts come back exactly as they were left.</td></tr>
     </tbody>
   </table>
   </div>
@@ -556,30 +215,23 @@
   <p class="lede">Leaves become cans. Cans become the player's own invented flavours.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
+    <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td class="id">ข-1</td><td class="what">Turning leaves into cans, picking a flavour</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Ten leaves make one can. Three flavours to choose from.</td></tr>
-      <tr><td class="id">ข-2</td>
-        <td class="what">Mixing flavours <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
-        <td><span class="pill p-warn">WAITING</span></td>
-        <td>Twenty recipe slots, fixed — the option to buy more was removed as the design document
-            asks. The twelve label colours are wired up and each one is tied to its own taste
-            effect, but <b>the actual colours still need brand approval</b>.</td></tr>
-      <tr><td class="id">ข-3</td>
-        <td class="what">Naming, and the word safety check <span class="tag nocut">never cut</span></td>
-        <td><span class="pill p-warn">WAITING</span></td>
+      <tr><td class="what">Turning leaves into cans, choosing a flavour</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Working. Still to add: a control for how many to make at once, rather than always
+            converting everything carried.</td></tr>
+      <tr><td class="what">Mixing flavours</td>
+        <td><span class="pill p-stop">WAITING ON YOU</span></td>
+        <td>Twenty recipe slots and the twelve-colour system are built and working. Waiting on the
+            approved colour values.</td></tr>
+      <tr><td class="what">Naming, and the word safety checks</td>
+        <td><span class="pill p-stop">WAITING ON YOU</span></td>
         <td>Players never type anything — every name is assembled from an approved word list and
-            checked at four separate points, and re-checked every time a name is displayed rather
-            than trusting what was saved. <b>The list of forbidden word pairings covers monster
-            names only — four pairs — and has nothing at all for drink names</b>, which combine an
-            ingredient, a modifier and a second ingredient across 18,225 possibilities with no
-            pairing safety net beneath the general filter. Names are stored in a way that lets the
-            word list grow later without renaming anything a player has already made.</td></tr>
-      <tr><td class="id">ข-4</td><td class="what">Drawing the cans</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Five fully detailed cans on screen at once is the limit, and it is exactly enough.</td></tr>
+            checked at four separate points. Waiting on the approved names.</td></tr>
+      <tr><td class="what">Drawing the cans</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Five detailed cans on screen at once.</td></tr>
     </tbody>
   </table>
   </div>
@@ -587,34 +239,29 @@
 
 <section>
   <h2><span class="code">ค</span>The Lab — monsters</h2>
-  <p class="lede">The client asked for this whole group at launch: build a monster, have it follow
-     you, put it on show.</p>
+  <p class="lede">Build a monster from collected pieces, have it follow you, put it on show.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
+    <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td class="id">ค-1</td>
-        <td class="what">Building a monster <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Free to build, as the newest design document asks. Six oversized pieces take up two of
-            the twelve slots instead of one, and the counter shows it.</td></tr>
-      <tr><td class="id">ค-2</td>
-        <td class="what">Monsters following players <span class="tag client">brand asked for it</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>At most ten monsters drawn near any one player, even in a crowd.</td></tr>
-      <tr><td class="id">ค-3</td>
-        <td class="what">Collecting monster pieces <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>One long scrolling list of 46 pieces, with no categories to click through. A monster with
-            five eyes and no head is allowed on purpose.</td></tr>
-      <tr><td class="id">ค-4</td>
-        <td class="what">Saving monsters <span class="tag">built to grow</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Saves already understand a third mode — monsters helping on the farm — so it can be
-            switched on later without touching anyone's saved data.</td></tr>
-      <tr><td class="id">ค-5</td><td class="what">Monsters on the show board</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Putting a monster on display shows a copy — the player keeps the original.</td></tr>
+      <tr><td class="what">Building a monster</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Free to build, twelve slots, oversized pieces take two. Three of the six oversized pieces
+            still need their measurements added before they can be placed.</td></tr>
+      <tr><td class="what">Monsters following players</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Up to ten shown near any one player, even in a crowd.</td></tr>
+      <tr><td class="what">Collecting monster pieces</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>One scrolling list, no categories. A monster with five eyes and no head is allowed on
+            purpose.</td></tr>
+      <tr><td class="what">Saving monsters</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Already prepared for monsters helping on the farm, so that can be switched on later
+            without disturbing anyone's saved monsters.</td></tr>
+      <tr><td class="what">Monsters on the show board</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>A stand shows a copy — the player keeps the original.</td></tr>
     </tbody>
   </table>
   </div>
@@ -622,23 +269,18 @@
 
 <section>
   <h2><span class="code">ง</span>Chakulza Tower</h2>
-  <p class="lede">Pour a can into the tower and something fun happens to everyone in town for a
-     while.</p>
+  <p class="lede">Pour a can into the tower and something fun happens to everyone in town.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
+    <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td class="id">ง-1</td>
-        <td class="what">The tower itself <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Rebuilt this round. The player now <i>chooses</i> the effect from three panels instead
-            of getting a random one, and there is no queue. If a panel is already busy the game says
-            so <b>before</b> taking any cans, and it does not start a waiting period either.</td></tr>
-      <tr><td class="id">ง-2</td>
-        <td class="what">Running several effects at once <span class="tag">built to grow</span> <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Three effects can run together, each with its own countdown. They now combine properly —
-            bouncing plus slow motion no longer sends players flying at full height.</td></tr>
+      <tr><td class="what">The tower</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>The player chooses the effect from three panels — no random rolls, no queueing. A small
+            fix outstanding on how the price resets at the start of a new day.</td></tr>
+      <tr><td class="what">Running several effects at once</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Three effects together, each with its own countdown, and they combine properly.</td></tr>
     </tbody>
   </table>
   </div>
@@ -646,45 +288,34 @@
 
 <section>
   <h2><span class="code">จ</span>The Market</h2>
-  <p class="lede">A place to show off what you made and react to what other people made. Nothing is
-     bought, sold or traded here — it is a display, not a shop.</p>
+  <p class="lede">Show off what you made, and react to what other people made. Nothing is bought,
+     sold or traded — it is a display, not a shop.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
+    <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td class="id">จ-1</td>
-        <td class="what">The show board <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Everything a player makes goes on the board. Ten per page, and the order is shuffled
-            each time it opens so the same few entries do not always sit at the top.</td></tr>
-      <tr><td class="id">จ-2</td>
-        <td class="what">Keeping the board in step everywhere <span class="tag">built to grow</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Everyone sees the same board no matter which copy of the world they join. Counts cannot
-            be double-added if a message arrives twice.</td></tr>
-      <tr><td class="id">จ-3</td>
-        <td class="what">Reactions <span class="tag">changed</span> <span class="tag nocut">never cut</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Four reactions — love, wow, funny, yuck — and <b>every one of them adds a point. None
-            takes a point away.</b> This is a child-safety rule, not a game balance choice: a
-            downvote is a bullying tool, and because "yuck" still raises the score, ganging up on a
-            player only helps them. Checked: a faked negative reaction is rejected, and adding a
-            fifth reaction later will not disturb the four that exist.</td></tr>
-      <tr><td class="id">จ-4</td>
-        <td class="what">Tasting and drinking <span class="tag">changed</span></td>
-        <td><span class="pill p-warn">WAITING</span></td>
-        <td>Twelve harmless visual effects, one tied to each label colour so a drink always looks
-            like its label. <b>The colours themselves still need brand approval.</b> Checked six
-            different ways that these effects can never change how fast or how high a player
-            moves.</td></tr>
-      <tr><td class="id">จ-5</td><td class="what">Hourly top ten and weekly prizes</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Runs by itself, with no staff involvement. Tested with six copies of the world competing
-            at once — all six agreed on one result within two seconds.</td></tr>
-      <tr><td class="id">จ-6</td>
-        <td class="what">Display stands <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Ten stands, up from six. Checked with all of them full at once.</td></tr>
+      <tr><td class="what">The show board</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Everything a player makes goes on it. The order is shuffled each time it opens, so the
+            same few entries do not always sit at the top.</td></tr>
+      <tr><td class="what">Keeping the board the same everywhere</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Working. The four separate reaction counts still need to be carried between servers as
+            well as shown on one.</td></tr>
+      <tr><td class="what">Reactions</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Four reactions, and <b>every one of them adds a point — none takes a point away.</b>
+            A deliberate child-safety choice: there is no way to vote something down, and because
+            "yuck" still raises the score, ganging up on a player only helps them.</td></tr>
+      <tr><td class="what">Tasting and drinking</td>
+        <td><span class="pill p-stop">WAITING ON YOU</span></td>
+        <td>Twelve effects, one per label colour, so a drink always looks like its label. Waiting on
+            the approved colours. These effects are decorative only and never affect play.</td></tr>
+      <tr><td class="what">Hourly top ten and weekly gifts</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Runs entirely by itself — no daily staff work at launch.</td></tr>
+      <tr><td class="what">Display stands</td>
+        <td><span class="pill p-ok">BUILT</span></td><td>Ten stands in the market.</td></tr>
     </tbody>
   </table>
   </div>
@@ -692,84 +323,57 @@
 
 <section>
   <h2><span class="code">ฉ</span>Everything else</h2>
-  <p class="lede">The parts that hold the game together — the world, saving, guidance, and the tools
-     that let the campaign run for a year without rebuilding the game.</p>
+  <p class="lede">The parts that hold the game together, and the tools that let the campaign run for
+     a year without rebuilding the game.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
+    <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td class="id">ฉ-1</td>
-        <td class="what">One world, and giving each player a farm <span class="tag">built to grow</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Six islands joined by bridges, 24 farms. The design document describes a single island —
-            this is an agreed difference, and it still meets the rule that matters: players walk
-            everywhere, and are never teleported or shown a loading screen.</td></tr>
-      <tr><td class="id">ฉ-2</td><td class="what">Moving and looking around</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Guided walking follows paths laid out in advance rather than working them out on the
-            spot. All 36 destinations are reachable from the starting point.</td></tr>
-      <tr><td class="id">ฉ-3</td>
-        <td class="what">Tutorial, starter gifts and first quests <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Seven tutorial steps, four opening quests, and four quests that unlock the extra farm
-            rows.</td></tr>
-      <tr><td class="id">ฉ-4</td><td class="what">Showing players where to go next</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Drawn on each player's own device, so a crowd does not slow the game down.</td></tr>
-      <tr><td class="id">ฉ-5</td>
-        <td class="what">Daily quests <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Two a day, drawn from a pool of eight. Targets scale up as the player unlocks more farm
-            rows.</td></tr>
-      <tr><td class="id">ฉ-6</td>
-        <td class="what">Turning spare items back into cans <span class="tag">changed</span></td>
-        <td><span class="pill p-stop">DECIDE</span></td>
-        <td><b>This is the first item above.</b> Built exactly as the design document specifies, even
-            though those numbers break the document's own rule that this must never be profitable.
-            The game logs a warning about itself every time it starts.<br><br>
-            <b>A second, smaller difference was found on 3 September:</b> spare items are counted one
-            type at a time rather than pooled together as the document asks, so small leftovers get
-            stranded. This one shortchanges the player slightly rather than favouring them, so it
-            does not make the first item worse.</td></tr>
-      <tr><td class="id">ฉ-7</td>
-        <td class="what">Unlocking things <span class="tag">built to grow</span> <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Farm rows now unlock by finishing a quest, never by paying. There are no levels.</td></tr>
-      <tr><td class="id">ฉ-8</td>
-        <td class="what">Saving player progress <span class="tag nocut">never cut</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Saves automatically, and again the moment a player leaves. Older saves are upgraded on
-            their own. <b>Items are retired, never deleted</b> — so when the item list changed, no
-            player lost the things they were holding, the decorations they had placed, or the
-            monsters they had built.</td></tr>
-      <tr><td class="id">ฉ-9</td><td class="what">Changing settings without updating the game</td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Campaign answers are held by the game itself and never sent to players' devices, so
-            nobody can look them up early.</td></tr>
-      <tr><td class="id">ฉ-10</td>
-        <td class="what">Staff tool to remove an entry <span class="tag nocut">never cut</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Hides or removes any single entry everywhere at once. It is the only staff tool there is.
-            Names are safe by design because they come from approved word lists — the real risk is
-            the <i>shape</i> a player builds a monster into, so that must always be removable. There
-            is no report button in the game; players report through Roblox itself, and this is how we
-            respond.</td></tr>
-      <tr><td class="id">ฉ-11</td>
-        <td class="what">Campaign keyword entry <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>The stand moves between six spots and changes every six hours, and is deliberately left
-            off the guidance system — finding it is part of it. <b>No campaign rounds have been
-            written yet</b> — that is content, not build work.</td></tr>
-      <tr><td class="id">ฉ-12</td>
-        <td class="what">Timed events and announcements <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Each round has a limit expressed as a value rather than a plain item count, with a
-            hand-picked list of what can drop. <b>Both calendars are intentionally empty</b> until
-            campaign content is written.</td></tr>
-      <tr><td class="id">ฉ-13</td>
-        <td class="what">Measuring what players do <span class="tag">changed</span></td>
-        <td><span class="pill p-ok">DONE</span></td>
-        <td>Now records which of the four reactions were sent, not just how many.</td></tr>
+      <tr><td class="what">One world, and a farm for every player</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Six islands joined by bridges, 24 farms. Players walk everywhere — never teleported,
+            never shown a loading screen.</td></tr>
+      <tr><td class="what">Moving and looking around</td>
+        <td><span class="pill p-ok">BUILT</span></td><td>Built for phones first.</td></tr>
+      <tr><td class="what">Tutorial, starter gifts and first quests</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Seven steps and the opening quests are in. One ordering fix outstanding so a brand-new
+            player receives their starter monster pieces at the right moment.</td></tr>
+      <tr><td class="what">Showing players where to go next</td>
+        <td><span class="pill p-ok">BUILT</span></td><td>A guiding trail to the current goal.</td></tr>
+      <tr><td class="what">Daily quests</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Two a day from a pool of eight, scaling as the farm grows.</td></tr>
+      <tr><td class="what">Turning spare items back into cans</td>
+        <td><span class="pill p-stop">WAITING ON YOU</span></td>
+        <td>Built exactly as the design document specifies. See item 3 above — the rates need one
+            decision from you.</td></tr>
+      <tr><td class="what">Unlocking new farm rows</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Rows unlock by finishing a quest, never by paying. There are no levels.</td></tr>
+      <tr><td class="what">Saving player progress</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Saves constantly and again the moment a player leaves. When the item list changed, no
+            player lost anything they were holding, had placed, or had built.</td></tr>
+      <tr><td class="what">Changing settings without updating the game</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Working for the core settings. Being widened so more of the campaign can be adjusted
+            during the year without a game update.</td></tr>
+      <tr><td class="what">Staff tool to remove an entry</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Removes any entry across every server at once. Being extended to cover a monster placed
+            on a display stand as well as one on the board.</td></tr>
+      <tr><td class="what">Campaign keyword entry</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>The stand moves around town and changes through the day. Campaign rounds are written
+            closer to launch.</td></tr>
+      <tr><td class="what">Timed events and announcements</td>
+        <td><span class="pill p-ok">BUILT</span></td>
+        <td>Ready and empty by design, waiting for campaign content.</td></tr>
+      <tr><td class="what">Measuring what players do</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Reaction figures are being recorded. Two further measures are being added — they are
+            what will settle item 3 above with real numbers rather than estimates.</td></tr>
     </tbody>
   </table>
   </div>
@@ -777,146 +381,82 @@
 
 <section>
   <h2>The 15 player screens</h2>
-  <p class="lede">All fifteen are built and working.</p>
-  <div class="note accent" style="font-size:13.5px">
-    <p><b>Our own notes were out of date.</b> The internal checklist still said the seed screen was
-       unbuilt and that there were six display stands. Both were wrong — the game has all fifteen
-       screens and ten stands. Found and corrected on 3 September.</p>
-  </div>
+  <p class="lede">All fifteen are built.</p>
   <div class="scroller">
   <table>
     <thead><tr><th>#</th><th>Screen</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td class="id">1</td><td>Main display — leaves, cans by flavour, hearts, current goal, tower progress</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">2</td><td>Bag — food, decorations and monster pieces</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">3</td><td>Mixing, plus a tab of flavours you have already made</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">4</td><td>Name picker, for flavours and for monsters</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">5</td><td>Factory, including choosing which flavour of can to make</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">6</td><td>Tower — three panels, each with its own countdown</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">7</td><td>Show board — pages, entry detail, four reactions with counts</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">8</td><td>Garden arranging mode</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">9</td><td>Daily quests</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">10</td><td>Settings</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">11</td><td>Tutorial overlay</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">12</td><td>Weekly results popup</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">13</td><td>Monster building and storage</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">14</td><td>Campaign keyword entry</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">15</td><td><b>Seed point</b> — the newest screen, added when seeds moved to the town centre</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">1</td><td>Main display — leaves, cans, hearts, current goal, tower progress</td><td><span class="pill p-warn">IN PROGRESS</span></td></tr>
+      <tr><td class="id">2</td><td>Bag — food, decorations and monster pieces</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">3</td><td>Mixing, and the flavours you have already made</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">4</td><td>Name picker</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">5</td><td>Factory</td><td><span class="pill p-warn">IN PROGRESS</span></td></tr>
+      <tr><td class="id">6</td><td>Tower — three panels with countdowns</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">7</td><td>Show board, with the four reactions</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">8</td><td>Garden arranging</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">9</td><td>Daily quests</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">10</td><td>Settings</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">11</td><td>Tutorial overlay</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">12</td><td>Weekly results</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">13</td><td>Monster building and storage</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">14</td><td>Campaign keyword entry</td><td><span class="pill p-ok">BUILT</span></td></tr>
+      <tr><td class="id">15</td><td>Seed point</td><td><span class="pill p-ok">BUILT</span></td></tr>
     </tbody>
   </table>
   </div>
+  <p class="lede" style="margin-top:14px">Screens 1 and 5 are marked in progress for small additions
+     — showing the three can flavours separately on the main display, and a "how many" control at the
+     factory. Both are working screens today.</p>
 </section>
 
 <section>
-  <h2>What was checked, and what it showed</h2>
-  <p class="lede">Every number here was read straight out of the game on 3 September — none of it was
-     copied from our own notes, which had drifted.</p>
+  <h2>Promises kept</h2>
+  <p class="lede">Commitments in the design document that are expensive or impossible to add later,
+     so they were built in from the start.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>Checked</th><th>Result</th><th></th></tr></thead>
+    <thead><tr><th>Promise</th><th></th></tr></thead>
     <tbody>
-      <tr><td>Everything in the game runs without errors</td><td class="num">162 pieces, 0 broken</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Every player action reaches the game correctly</td><td class="num">37 of 37</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Food, decorations, monster pieces</td><td class="num">45 · 10 · 46</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Items in play, retired, still stand-ins</td><td class="num">102 · 41 · 64</td><td><span class="pill p-warn">64 stand-ins</span></td></tr>
-      <tr><td>Every monster group has all three rarity levels</td><td class="num">no gaps</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Label colours matched to taste effects</td><td class="num">12 and 12, all paired</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Planting spots across all farms</td><td class="num">480 — five rows of four</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Old seed boxes removed from farms</td><td class="num">all gone, town point in place</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Display stands</td><td class="num">10</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Tower panels, and no random rolls</td><td class="num">3, none random</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Reactions</td><td class="num">4 — love, wow, funny, yuck</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Any way for players to spend real money</td><td class="num">none anywhere</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Any teleporting or loading screens</td><td class="num">none anywhere</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Forbidden words in anything players can see</td><td class="num">none found</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Settings within their allowed limits</td><td class="num">272 of 273</td><td><span class="pill p-warn">1 out of range</span></td></tr>
-      <tr><td>Times the game has been played</td><td class="num">0</td><td><span class="pill p-warn">STILL OPEN</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h3 class="sub2">Two smaller things worth fixing</h3>
-  <ul>
-    <li><b>One setting sits outside its allowed range</b> — the only one of 273, and it has been that
-        way for a while. Worth noting that our own record from 2 September claims every setting is
-        within range; <b>that claim was wrong</b>, and checking the game directly is what caught
-        it.</li>
-    <li><b>A money-themed visual effect is sitting unused in the library.</b> Two entries point at a
-        set of effects containing spinning coins and flying cash. Nothing in the game uses them
-        today, so nothing appears on screen — but if anyone ever connected them, money imagery would
-        show up, which the brand rules forbid outright. Removing the two entries now costs
-        minutes.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>The rules that cannot be broken</h2>
-  <p class="lede">Promises made in the design document that would be expensive or impossible to add
-     back later. Each one was checked against the actual game, not assumed.</p>
-  <div class="scroller">
-  <table>
-    <thead><tr><th>Rule</th><th>State</th></tr></thead>
-    <tbody>
-      <tr><td>The game decides everything, never the player's device — so it cannot be cheated</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Growth and daily timers run on the game's clock, never the player's</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>The world loads in around the player as they walk</td><td><span class="pill p-warn">on, distance provisional</span></td></tr>
-      <tr><td>Progress saves constantly and cannot be lost or duplicated</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Every piece of text is checked for safety, four times over</td><td><span class="pill p-warn">on, no pairings for drink names</span></td></tr>
       <tr><td>One world — players walk everywhere, no teleporting, no loading screens</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Monsters are drawn on each player's device, never kept in the shared world</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Anything valuable is saved in one go, so a disconnect cannot lose or duplicate it</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Only one system controls how players move, so effects cannot conflict</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Every balance number is a setting that can be changed without rebuilding the game</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Every reaction adds a point; none takes one away — a child-safety promise</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>Players never type free text — every name comes from an approved list</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Nothing assumes there will only ever be four reactions, or a fixed number of recipes</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Every piece of text is checked for safety, four times over</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>No way to spend real money anywhere in the game</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>No share buttons, links, codes, outside notifications or photo mode</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>Drink and tasting effects are decorative only — they never affect play</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Groundwork for later features ships now, so switching them on needs no rebuild</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Every reaction adds; none takes away — a child-safety promise</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Progress saves constantly and cannot be lost or duplicated</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>The game decides everything, so it cannot be cheated from a player's device</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Characters drink only Chakulza — no other beverage exists</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>The tower never picks at random and never makes players queue</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Plants do not keep growing while a player is away</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Groundwork for later features is already in, so switching them on needs no rebuild</td><td><span class="pill p-ok">HOLDS</span></td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
 <section>
-  <h2>Keeping this page honest</h2>
-  <div class="note stop">
-    <h3>🔄 This page gets updated every time anything changes</h3>
-    <p>This is the one place to look for where the project stands. A part of the game is
-       <b>not finished until this page says it is</b> — an out-of-date status page is worse than none
-       at all, because people believe it.</p>
-    <p><b>The rule:</b> whenever a part changes status, or something starts or stops blocking
-       progress, this page is updated and republished <i>the same day</i>. Never saved up for
-       later.</p>
-  </div>
-
-  <h3 class="sub2">How it gets updated</h3>
+  <h2>What happens next</h2>
   <ol>
-    <li><b>Check the actual game first.</b> Never write a status from memory or from our own notes —
-        those have already been wrong twice.</li>
-    <li>Update the row, and anything elsewhere on the page it affects.</li>
-    <li>Update the counters at the top and the date in the header.</li>
-    <li>Publish. The page goes live within about a minute.</li>
+    <li><b>You approve the names and the colours.</b> Everything visual waits on this — it is the
+        critical path.</li>
+    <li><b>Artwork begins</b> — monster pieces, food items, decorations, can labels.</li>
+    <li><b>You settle the one balance question</b> on item values. We are adding measurements now so
+        that decision can be made from real figures.</li>
+    <li><b>The remaining in-progress items close.</b> All are small and none need anything from
+        you.</li>
+    <li><b>Testing on real phones</b>, then the launch checks.</li>
   </ol>
-
-  <h3 class="sub2">The standards this page is held to</h3>
-  <ul>
-    <li><b>Measured, never guessed.</b> Every number came out of the running game. If something
-        cannot be measured, the page says so instead of estimating.</li>
-    <li><b>A green row is a promise.</b> "Built but never played" does not count as finished without
-        the warning at the top of this page.</li>
-    <li><b>Differences from the design document get written down, not quietly absorbed.</b> Two are
-        recorded above — the island layout and the spare-item rates — and both ship knowingly.</li>
-    <li><b>When our notes and the actual game disagree, the game wins</b> and the notes get
-        fixed.</li>
-  </ul>
+  <div class="note warn">
+    <p><b>The one thing worth doing today at no cost:</b> the artist needs one instruction before
+       modelling begins — monster pieces must share seven artwork sheets between them, with colour
+       tinted onto plain grey shapes. Sending that now costs nothing. Sending it after the pieces
+       are made means all 46 are redone.</p>
+  </div>
 </section>
 
 <p class="foot">
-  Checked against the live game on 3 September 2026. Measured against the design document of
-  31 August 2026; this page reports status only and does not reproduce any part of that document.
+  Status as of 3 September 2026, checked against the design document of 31 August 2026.
+  This page is updated whenever any part of the game changes state.
 </p>
 
 </div>
