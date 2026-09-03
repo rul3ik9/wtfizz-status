@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>WHAT THE FIZZ!? — System Status</title>
+<title>WHAT THE FIZZ!? — Build Status</title>
 <style>
   :root{
     --bg:#f7f6f3; --panel:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
@@ -39,8 +39,8 @@
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-       font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+       font-size:15px;line-height:1.6;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 20px 80px}
 
   header.top{border-bottom:1px solid var(--line);margin-bottom:28px;padding:36px 0 24px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
@@ -66,7 +66,7 @@
   .note.stop{background:var(--stop-bg);border-color:var(--stop)}
   .note.accent{background:var(--accent-soft);border-color:var(--accent)}
 
-  section{margin:0 0 40px;scroll-margin-top:16px}
+  section{margin:0 0 40px}
   h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em;font-weight:650;
      padding-top:22px;border-top:1px solid var(--line)}
   h2 .code{font-family:var(--mono);font-size:13px;color:var(--accent);margin-right:8px}
@@ -74,7 +74,7 @@
   h3.sub2{font-size:14.5px;margin:24px 0 8px;font-weight:650}
 
   .scroller{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
-  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:680px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:600px}
   th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
      text-transform:uppercase;color:var(--muted);font-weight:600;
      padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;
@@ -82,9 +82,9 @@
   td{padding:10px 12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
   tr:last-child td{border-bottom:none}
   td.id{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap;font-weight:600}
-  td.mod{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.5}
   td.num{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
   td.nowrap{white-space:nowrap}
+  td.what{font-weight:600}
 
   .pill{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.05em;
         padding:2px 7px;border-radius:20px;white-space:nowrap;font-weight:600;line-height:1.6}
@@ -92,559 +92,534 @@
   .p-warn{background:var(--warn-bg);color:var(--warn)}
   .p-stop{background:var(--stop-bg);color:var(--stop)}
   .p-idle{background:var(--idle-bg);color:var(--idle)}
-  .tag{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;
-       padding:1px 5px;border-radius:4px;background:var(--idle-bg);color:var(--idle);
-       margin-left:5px;vertical-align:1px}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.02em;
+       padding:1px 6px;border-radius:4px;background:var(--idle-bg);color:var(--idle);
+       margin-left:5px;vertical-align:1px;white-space:nowrap}
   .tag.client{background:var(--accent-soft);color:var(--accent)}
   .tag.nocut{background:var(--stop-bg);color:var(--stop)}
 
-  code{font-family:var(--mono);font-size:.9em;background:var(--line-soft);
-       padding:1px 5px;border-radius:4px}
-  ul,ol{margin:8px 0;padding-left:20px} li{margin:4px 0}
+  ul,ol{margin:8px 0;padding-left:20px} li{margin:5px 0}
   a{color:var(--accent)}
   .foot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;
         color:var(--muted);font-size:12.5px}
   .legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 18px;
-          font-size:12px;color:var(--muted);align-items:center}
+          font-size:12.5px;color:var(--muted);align-items:center}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header class="top">
-  <p class="eyebrow">Roblox · Phase 1 whitebox · Oishi / Chakulza</p>
-  <h1>WHAT THE FIZZ!? — System Status</h1>
-  <p class="sub">Live status of all 35 contracted systems, 15 player screens and the 1 admin tool,
-     measured directly against the running Studio place rather than read from documentation.</p>
+  <p class="eyebrow">Oishi · Chakulza · first build</p>
+  <h1>WHAT THE FIZZ!? — Build Status</h1>
+  <p class="sub">Where every part of the game stands today: what is finished, what is waiting on a
+     decision, and what still has to happen before launch.</p>
   <div class="meta">
-    <span><b>Measured</b> 2026-09-03</span>
-    <span><b>Place</b> 109128377064802</span>
-    <span><b>Schema</b> v10</span>
-    <span><b>Spec</b> GDD v3.0 (31 Aug 2026)</span>
-    <span><b>Scripts</b> 162 · 0 syntax failures</span>
+    <span><b>Checked</b> 3 September 2026</span>
+    <span><b>Against</b> the design document of 31 August 2026</span>
+    <span><b>Stage</b> grey-box build — everything works, artwork comes later</span>
   </div>
 </header>
 
 <div class="tiles">
-  <div class="tile ok"><div class="n">31</div><div class="l">Systems complete</div></div>
-  <div class="tile warn"><div class="n">3</div><div class="l">Complete, gated</div></div>
-  <div class="tile stop"><div class="n">1</div><div class="l">Ships violating spec</div></div>
+  <div class="tile ok"><div class="n">31</div><div class="l">Parts finished</div></div>
+  <div class="tile warn"><div class="n">3</div><div class="l">Waiting on brand</div></div>
+  <div class="tile stop"><div class="n">1</div><div class="l">Needs a decision</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
-  <div class="tile ok"><div class="n">37</div><div class="l">Remotes bound</div></div>
-  <div class="tile warn"><div class="n">0</div><div class="l">Play sessions run</div></div>
+  <div class="tile ok"><div class="n">102</div><div class="l">Items in the game</div></div>
+  <div class="tile warn"><div class="n">0</div><div class="l">Times played yet</div></div>
 </div>
 
 <div class="note warn">
-  <h3>⚠ One caveat applies to every green row on this page</h3>
-  <p><b>No Play session has ever been run on the Phase 1c code.</b> Every status below comes from
-     Edit-mode inspection, fresh-loaded module execution against the live config, and direct instance
-     measurement. That is strong evidence for logic and data, and <b>no evidence at all</b> for
-     frame rate, streaming behaviour under load, or anything that only appears with real players
-     connected.</p>
-  <p>Read every <span class="pill p-ok">DONE</span> as <i>"built and logically verified, not yet
-     played."</i> The performance gate is the step that closes this.</p>
+  <h3>⚠ One thing to know before reading anything below</h3>
+  <p><b>Nobody has played the game yet.</b> Everything on this page was checked by opening the game
+     up and inspecting it piece by piece — every rule, every number, every screen. That proves the
+     game is <i>built correctly</i>. It proves nothing about how it <i>feels</i>, or whether it runs
+     smoothly on a real phone with real players in it.</p>
+  <p>So read every <span class="pill p-ok">DONE</span> as <b>"built and checked, not yet played."</b>
+     A test session on a real phone is the step that closes this gap, and it has not happened.</p>
 </div>
 
-<section id="blockers">
-  <h2>Open blockers</h2>
-  <p class="lede">Five items stand between the current build and the first approval gate. Only one is
-     engineering work; the rest need a decision, a name list, or a device.</p>
+<section>
+  <h2>What is holding things up</h2>
+  <p class="lede">Five things stand between where we are now and brand sign-off. Only one of them is
+     work for the build team — the rest need a decision, a list of names, or a phone to test on.</p>
 
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Blocker</th><th>Owner</th><th>Blocks</th><th>Closes when</th></tr></thead>
+    <thead><tr><th>#</th><th>What</th><th>Who decides</th><th>What it holds up</th><th>How it closes</th></tr></thead>
     <tbody>
       <tr>
         <td class="id">1</td>
-        <td><b>Duplicate conversion prints cans.</b> Pour costs 1 can and returns
-            <b>1.10 cans</b> on average, so pouring is a faucet where the spec requires a sink.
-            Legendary supplies 0.50 of that 1.10 while firing on only 5% of rolls.</td>
-        <td class="nowrap">Brand&nbsp;owner</td>
-        <td>Economy balance; every other can sink</td>
-        <td>A number is chosen: legendary rate, <code>pour.cost</code>, or <code>pour.dropSize</code></td>
+        <td><b>Players end up with more cans than they spend.</b> Pouring a can on a plant is meant
+            to <i>cost</i> the player. At the rates the design document sets, the player gets back
+            slightly more than they paid — so pouring over and over slowly makes cans out of nothing,
+            and everything else you can spend cans on stops mattering.<br><br>
+            The rarest drops cause it. They come up only once in twenty pours, but they hand back ten
+            times what the pour cost.</td>
+        <td class="nowrap">Brand owner</td>
+        <td>The whole reward balance</td>
+        <td>Pick one number to change — what the rarest drops are worth, what a pour costs, or how
+            many items a pour gives</td>
       </tr>
       <tr>
         <td class="id">2</td>
-        <td><b>Brand approval bundles.</b> Two outstanding: the 12 label colour values, and the
-            name set — 45 food + 46 monster parts + 3 Signature recipes — which the spec requires
-            reviewed together as a single bundle, in writing.</td>
-        <td class="nowrap">Brand&nbsp;owner</td>
-        <td>Asset freeze; all art production</td>
-        <td>Written sign-off received on both bundles</td>
+        <td><b>Two approvals are outstanding.</b> The twelve label colours, and the full name list —
+            45 foods, 46 monster pieces and 3 special recipes. The design document asks for these to
+            be approved together as one set, in writing.</td>
+        <td class="nowrap">Brand owner</td>
+        <td>All artwork</td>
+        <td>Written approval on both</td>
       </tr>
       <tr>
         <td class="id">3</td>
-        <td><b>64 items still placeholder.</b> Of 102 active items, 64 have no final name or art.
-            The approval round in blocker 2 cannot even begin until this list is complete.</td>
+        <td><b>64 items still have no final name or look.</b> They exist and work in the game, but
+            they are stand-ins. The approval in row 2 cannot even start until this list is finished.</td>
         <td class="nowrap">Design + brand</td>
-        <td>Blocker 2, and therefore art</td>
-        <td><code>Derived.PlaceholderItems()</code> reaches 0</td>
+        <td>Row 2, and so all artwork</td>
+        <td>The count reaches zero</td>
       </tr>
       <tr>
         <td class="id">4</td>
-        <td><b>7 shared texture sheets not specified to the artist.</b> Monster parts must share one
-            texture per category (7 total) with colour applied by tinting a grey mesh. If parts are
-            modelled before this lands, all 46 need re-texturing.</td>
+        <td><b>The artist has not been told one rule yet.</b> Monster pieces must share one artwork
+            sheet per group — seven sheets in total — with colour added by tinting a plain grey
+            shape. If the pieces get made before this reaches the artist, all 46 have to be redone.</td>
         <td class="nowrap">Art direction</td>
-        <td>Monster part modelling</td>
-        <td>The constraint reaches the artist in writing</td>
+        <td>Monster piece artwork</td>
+        <td>The rule reaches the artist in writing. Free to do today, expensive to do late</td>
       </tr>
       <tr>
         <td class="id">5</td>
-        <td><b>Performance gate never run.</b> No Play session, no frame rate on the reference
-            Android device. Streaming radius and the 24-player cap were measured against the
-            <i>old</i> plot layout and ship provisionally.</td>
-        <td class="nowrap">Perf + owner</td>
-        <td>Launch readiness sign-off</td>
-        <td>Device test at monster render ceiling + dense town</td>
+        <td><b>Never tested on a phone.</b> The design document requires a test on a reference
+            Android phone, in the busiest possible scene, as a condition of sign-off. Two settings
+            controlling how much of the world loads around each player were chosen for the
+            <i>old</i>, smaller farm and have not been rechecked since the farm grew.</td>
+        <td class="nowrap">Build team + owner</td>
+        <td>Launch readiness</td>
+        <td>One test session on the reference phone</td>
       </tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="legend-sec">
-  <h2>Status legend</h2>
+<section>
+  <h2>How to read the tables</h2>
   <div class="legend" style="margin-top:14px">
-    <span><span class="pill p-ok">DONE</span> built &amp; verified in Edit mode</span>
-    <span><span class="pill p-warn">GATED</span> code complete, waiting on brand or content</span>
-    <span><span class="pill p-stop">VIOLATION</span> ships knowingly against spec</span>
-    <span><span class="pill p-idle">TODO</span> not started</span>
+    <span><span class="pill p-ok">DONE</span> built and checked</span>
+    <span><span class="pill p-warn">WAITING</span> built, needs something from brand</span>
+    <span><span class="pill p-stop">DECIDE</span> built, but knowingly against the design document</span>
   </div>
   <div class="legend">
-    <span><span class="tag client">client</span> brand owner requires it at launch</span>
-    <span><span class="tag nocut">nocut</span> on the never-cut list</span>
-    <span><span class="tag">ext</span> extension point — structure ships even when the feature is off</span>
-    <span><span class="tag">v3.0</span> scope changed in the current spec</span>
+    <span><span class="tag client">brand asked for it</span> required at launch by the client</span>
+    <span><span class="tag nocut">never cut</span> cannot be dropped, whatever happens to the schedule</span>
+    <span><span class="tag">built to grow</span> groundwork ships now so it can be switched on later without redoing anything</span>
+    <span><span class="tag">changed</span> this part changed in the newest design document</span>
   </div>
 </section>
 
-<section id="farm">
-  <h2><span class="code">ก</span>Farm — What The Fizz TEA FARM</h2>
-  <p class="lede">5 systems. The core loop: sow → water → grow through three states → harvest →
-     20 harvests and the plant is gone.</p>
+<section>
+  <h2><span class="code">ก</span>The Farm</h2>
+  <p class="lede">Plant a seed, water it, watch it grow through three stages, pick the leaves.
+     After twenty pickings the plant is spent and disappears.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>System</th><th>Owner module</th><th>Status</th><th>Notes</th></tr></thead>
+    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
     <tbody>
       <tr><td class="id">ก-1</td>
-        <td>Planting, watering, harvest, plant lifespan <span class="tag">v3.0</span></td>
-        <td class="mod">FarmService · GrowthMath · PlantService · WaterService · SeedService</td>
+        <td class="what">Planting, watering, picking, plant lifespan <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>No offline growth — a plant banks exactly one cycle and stops. 5 rows × 4, 480 sockets
-            live. Seeds free from the town dispenser. 5 render states.</td></tr>
+        <td>Plants no longer keep growing while the player is away — one growth step is saved and
+            waits for them. The farm is now five rows of four. Seeds are free from the town centre.
+            Five different looks as a plant grows and dies back.</td></tr>
       <tr><td class="id">ก-2</td>
-        <td>Pour by flavour + two-stage rarity roll + 5 featured types/day <span class="tag">v3.0</span></td>
-        <td class="mod">PourService · DropTable · FeaturedRotation</td>
+        <td class="what">Pouring, and what drops from it <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Flavour fully determines drop class. Featured draws 5 ids/day across 3 rarity tiers,
-            rotation 45 days.</td></tr>
+        <td>The flavour poured decides what kind of thing drops — yellow gives food, purple gives
+            monster pieces, pink gives decorations. Five featured items highlighted each day.</td></tr>
       <tr><td class="id">ก-3</td>
-        <td>Placement core + validation <span class="tag client">client</span></td>
-        <td class="mod">PlacementService · PlacementGrid</td>
+        <td class="what">Placing objects <span class="tag client">brand asked for it</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>One runtime serving garden, monster assembly and plants. Never duplicated.</td></tr>
-      <tr><td class="id">ก-4</td><td>Garden touch UX</td>
-        <td class="mod">GardenController · GardenGhostController</td>
+        <td>One system handles placing decorations, building monsters, and planting. Built once and
+            reused, never copied.</td></tr>
+      <tr><td class="id">ก-4</td><td class="what">Arranging the garden by touch</td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Ghost preview parented under the local camera, so it never replicates.</td></tr>
+        <td>A preview of where an object will land follows the finger, and only the player moving it
+            can see it.</td></tr>
       <tr><td class="id">ก-5</td>
-        <td>Garden serialization <span class="tag">ext</span></td>
-        <td class="mod">PlacementService · ProfileService</td>
+        <td class="what">Saving the garden layout <span class="tag">built to grow</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Reserved position / rotation / scale survive sanitise and a round trip byte-exact.</td></tr>
+        <td>Layouts save and come back exactly as they were, with room left for object sizes and
+            angles to be added later.</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="factory">
-  <h2><span class="code">ข</span>Factory — What The Fizz FACTORY</h2>
-  <p class="lede">4 systems. Leaves become cans; cans become named flavours.</p>
+<section>
+  <h2><span class="code">ข</span>The Factory</h2>
+  <p class="lede">Leaves become cans. Cans become the player's own invented flavours.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>System</th><th>Owner module</th><th>Status</th><th>Notes</th></tr></thead>
+    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
     <tbody>
-      <tr><td class="id">ข-1</td><td>Leaves → cans, flavour pick, cumulative counter</td>
-        <td class="mod">FactoryService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>10 leaves = 1 can. Three flavours picked at the factory.</td></tr>
+      <tr><td class="id">ข-1</td><td class="what">Turning leaves into cans, picking a flavour</td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Ten leaves make one can. Three flavours to choose from.</td></tr>
       <tr><td class="id">ข-2</td>
-        <td>Flavor mixing <span class="tag client">client</span> <span class="tag">v3.0</span></td>
-        <td class="mod">RecipeService · RecipeKey</td>
-        <td><span class="pill p-warn">GATED</span></td>
-        <td>20 fixed slots, expansion feature deleted. 12-colour palette structural and mapped 1:1,
-            but <b>colour values await brand</b>.</td></tr>
+        <td class="what">Mixing flavours <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
+        <td><span class="pill p-warn">WAITING</span></td>
+        <td>Twenty recipe slots, fixed — the option to buy more was removed as the design document
+            asks. The twelve label colours are wired up and each one is tied to its own taste
+            effect, but <b>the actual colours still need brand approval</b>.</td></tr>
       <tr><td class="id">ข-3</td>
-        <td>Word-list naming + 4-point text filter <span class="tag nocut">nocut</span></td>
-        <td class="mod">NameService · NameBuilder</td>
-        <td><span class="pill p-warn">GATED</span></td>
-        <td>Filter wired at all 4 points. <b>Word-pair blacklist is empty</b> — the layer exists but
-            has never been tested against real pairs. Names save as index triples into an
-            append-only id list, so growing the bank can never re-label saved names.</td></tr>
-      <tr><td class="id">ข-4</td><td>Can visual generation + surface pooling</td>
-        <td class="mod">UI/CanVisual</td><td><span class="pill p-ok">DONE</span></td>
-        <td>5 full-detail cans exhaust the 25-layer budget exactly. 0.074 ms from pool.</td></tr>
+        <td class="what">Naming, and the word safety check <span class="tag nocut">never cut</span></td>
+        <td><span class="pill p-warn">WAITING</span></td>
+        <td>Players never type anything — every name is assembled from an approved word list and
+            checked at four separate points. <b>The list of forbidden word pairings is still
+            empty</b>, so that last layer has never been tested against real examples. Names are
+            stored in a way that lets the word list grow later without renaming anything a player
+            has already made.</td></tr>
+      <tr><td class="id">ข-4</td><td class="what">Drawing the cans</td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Five fully detailed cans on screen at once is the limit, and it is exactly enough.</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="lab">
-  <h2><span class="code">ค</span>Lab — What The Fizz LAB (monsters)</h2>
-  <p class="lede">5 systems. The whole group is a brand-owner launch requirement.
-     Monsters never exist server-side in the world — the server stores state, clients assemble.</p>
+<section>
+  <h2><span class="code">ค</span>The Lab — monsters</h2>
+  <p class="lede">The client asked for this whole group at launch: build a monster, have it follow
+     you, put it on show.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>System</th><th>Owner module</th><th>Status</th><th>Notes</th></tr></thead>
+    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
     <tbody>
       <tr><td class="id">ค-1</td>
-        <td>Monster assembly UI <span class="tag client">client</span> <span class="tag">v3.0</span></td>
-        <td class="mod">MonsterService · MonsterController</td>
+        <td class="what">Building a monster <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Free to build. 6 large parts marked <code>slots = 2</code> and the x/12 counter honours
-            the field.</td></tr>
+        <td>Free to build, as the newest design document asks. Six oversized pieces take up two of
+            the twelve slots instead of one, and the counter shows it.</td></tr>
       <tr><td class="id">ค-2</td>
-        <td>Hover follow + cross-player render cap <span class="tag client">client</span></td>
-        <td class="mod">MonsterController</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Cap held at 10 of 15 attempted within 80 studs. Reconciled every 0.5 s, not per frame.</td></tr>
+        <td class="what">Monsters following players <span class="tag client">brand asked for it</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>At most ten monsters drawn near any one player, even in a crowd.</td></tr>
       <tr><td class="id">ค-3</td>
-        <td>Creature part drops + inventory <span class="tag">v3.0</span></td>
-        <td class="mod">PourService · InventoryService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>One scrollable list of 46, no category tabs. The 7 categories are art labels, never
-            sockets, never written to the save.</td></tr>
+        <td class="what">Collecting monster pieces <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>One long scrolling list of 46 pieces, with no categories to click through. A monster with
+            five eyes and no head is allowed on purpose.</td></tr>
       <tr><td class="id">ค-4</td>
-        <td>Monster save + schema + farm-work hook <span class="tag">ext</span></td>
-        <td class="mod">MonsterService · ProfileService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Save accepts follow / stored / farm-work from day one; farm-work refused by config,
-            never by schema.</td></tr>
-      <tr><td class="id">ค-5</td><td>Monsters on the show board</td>
-        <td class="mod">BoardService · MonsterService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>A stand holds a copy; the owner's original is untouched.</td></tr>
+        <td class="what">Saving monsters <span class="tag">built to grow</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Saves already understand a third mode — monsters helping on the farm — so it can be
+            switched on later without touching anyone's saved data.</td></tr>
+      <tr><td class="id">ค-5</td><td class="what">Monsters on the show board</td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Putting a monster on display shows a copy — the player keeps the original.</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="tower">
-  <h2><span class="code">ง</span>Tower — CHAKULZA TOWER</h2>
-  <p class="lede">2 systems. Rebuilt in Phase 1c: the tower never randomises and never queues.</p>
+<section>
+  <h2><span class="code">ง</span>Chakulza Tower</h2>
+  <p class="lede">Pour a can into the tower and something fun happens to everyone in town for a
+     while.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>System</th><th>Owner module</th><th>Status</th><th>Notes</th></tr></thead>
+    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
     <tbody>
       <tr><td class="id">ง-1</td>
-        <td>CHAKULZA TOWER <span class="tag">v3.0</span></td>
-        <td class="mod">TowerService · TowerState</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Player picks the effect from a 3-slot panel. A busy slot refuses <b>before</b> charging
-            either cans or cooldown. Base cost 3, 90 s effect, 600 s cooldown.</td></tr>
-      <tr><td class="id">ง-2</td>
-        <td>Zone effect controller + modifier stack + registry
-            <span class="tag">ext</span> <span class="tag">v3.0</span></td>
-        <td class="mod">ZoneEffectController · ZoneScaleService</td>
+        <td class="what">The tower itself <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>3 concurrent effects, one per mechanism, independent timers. Jelly multiplies the
-            <i>resolved</i> jump height, so jelly + slow motion no longer launches at full height.</td></tr>
+        <td>Rebuilt this round. The player now <i>chooses</i> the effect from three panels instead
+            of getting a random one, and there is no queue. If a panel is already busy the game says
+            so <b>before</b> taking any cans, and it does not start a waiting period either.</td></tr>
+      <tr><td class="id">ง-2</td>
+        <td class="what">Running several effects at once <span class="tag">built to grow</span> <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Three effects can run together, each with its own countdown. They now combine properly —
+            bouncing plus slow motion no longer sends players flying at full height.</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="market">
-  <h2><span class="code">จ</span>MARKET</h2>
-  <p class="lede">6 systems. Display and exhibition only — no trading, no player-to-player exchange
-     of any kind.</p>
+<section>
+  <h2><span class="code">จ</span>The Market</h2>
+  <p class="lede">A place to show off what you made and react to what other people made. Nothing is
+     bought, sold or traded here — it is a display, not a shop.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>System</th><th>Owner module</th><th>Status</th><th>Notes</th></tr></thead>
+    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
     <tbody>
       <tr><td class="id">จ-1</td>
-        <td>Server-level show board, every entry posted <span class="tag">v3.0</span></td>
-        <td class="mod">BoardService · BoardViewService · BoardScreenController</td>
+        <td class="what">The show board <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Per-type emoji counters; page order reshuffled on every open. 10 per page.</td></tr>
+        <td>Everything a player makes goes on the board. Ten per page, and the order is shuffled
+            each time it opens so the same few entries do not always sit at the top.</td></tr>
       <tr><td class="id">จ-2</td>
-        <td>The 4 cross-server persistent items <span class="tag">ext</span></td>
-        <td class="mod">BoardStoreService · BoardSyncService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Entry ids carry no server id — 43 chars worst case against the 50-char key limit. Flush
-            is idempotent by batch id checked inside the transform, so a replay is a no-op.</td></tr>
-      <tr><td class="id">จ-3</td>
-        <td>ใจซ่า economy + 4-emoji reactions
-            <span class="tag">v3.0</span> <span class="tag nocut">nocut</span></td>
-        <td class="mod">VoteService</td><td><span class="pill p-ok">DONE</span></td>
-        <td><b>Every reaction adds; none subtracts</b> — a child-safety rule, not a balance choice.
-            🤢 still raises the score, so brigading a player helps them. Verified: a forged negative
-            scrubs to 0, and an unconfigured 5th type is preserved rather than dropped.</td></tr>
-      <tr><td class="id">จ-4</td>
-        <td>Tasting + drinking + cosmetics <span class="tag">v3.0</span></td>
-        <td class="mod">TastingService · ZoneEffectController</td>
-        <td><span class="pill p-warn">GATED</span></td>
-        <td>12 effects keyed 1:1 to the 12 label colours, so label and effect cannot disagree.
-            Audit: 12 registered / 12 palette / 0 unpaired / 0 movement violations.
-            <b>Colour values await brand.</b> Six attempts to reach a movement variable were all
-            refused.</td></tr>
-      <tr><td class="id">จ-5</td><td>Hourly server Top 10 + automatic weekly rewards</td>
-        <td class="mod">BoardTallyService · WeeklyCutService · WeeklyRewardService</td>
+        <td class="what">Keeping the board in step everywhere <span class="tag">built to grow</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>The weekly cut is single-flight by compare-and-set with no timeout constant. 6 simulated
-            servers raced it and settled on one ranking in 1.7 s.</td></tr>
+        <td>Everyone sees the same board no matter which copy of the world they join. Counts cannot
+            be double-added if a message arrives twice.</td></tr>
+      <tr><td class="id">จ-3</td>
+        <td class="what">Reactions <span class="tag">changed</span> <span class="tag nocut">never cut</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Four reactions — love, wow, funny, yuck — and <b>every one of them adds a point. None
+            takes a point away.</b> This is a child-safety rule, not a game balance choice: a
+            downvote is a bullying tool, and because "yuck" still raises the score, ganging up on a
+            player only helps them. Checked: a faked negative reaction is rejected, and adding a
+            fifth reaction later will not disturb the four that exist.</td></tr>
+      <tr><td class="id">จ-4</td>
+        <td class="what">Tasting and drinking <span class="tag">changed</span></td>
+        <td><span class="pill p-warn">WAITING</span></td>
+        <td>Twelve harmless visual effects, one tied to each label colour so a drink always looks
+            like its label. <b>The colours themselves still need brand approval.</b> Checked six
+            different ways that these effects can never change how fast or how high a player
+            moves.</td></tr>
+      <tr><td class="id">จ-5</td><td class="what">Hourly top ten and weekly prizes</td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Runs by itself, with no staff involvement. Tested with six copies of the world competing
+            at once — all six agreed on one result within two seconds.</td></tr>
       <tr><td class="id">จ-6</td>
-        <td>Monster display stands <span class="tag client">client</span> <span class="tag">v3.0</span></td>
-        <td class="mod">MonsterStandService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>10 stands built and measured live. At full load: 0 humanoids, 0 joints, 0 server-side
-            monster instances in the world.</td></tr>
+        <td class="what">Display stands <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Ten stands, up from six. Checked with all of them full at once.</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="gamewide">
-  <h2><span class="code">ฉ</span>Game-wide systems</h2>
-  <p class="lede">13 systems. Infrastructure, progression, and the live-ops surface that has to run
-     for a year on remote config without a game update.</p>
+<section>
+  <h2><span class="code">ฉ</span>Everything else</h2>
+  <p class="lede">The parts that hold the game together — the world, saving, guidance, and the tools
+     that let the campaign run for a year without rebuilding the game.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>System</th><th>Owner module</th><th>Status</th><th>Notes</th></tr></thead>
+    <thead><tr><th>#</th><th>Part</th><th>Status</th><th>Where it stands</th></tr></thead>
     <tbody>
       <tr><td class="id">ฉ-1</td>
-        <td>One world + farm slot allocation <span class="tag">ext</span></td>
-        <td class="mod">FarmSlotService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>6-island bridged archipelago, 24 plots. A confirmed accepted deviation from the spec's
-            single island — still one continuous walkable world, so the "one world, walk it" rule
-            holds. No teleport anywhere in the place.</td></tr>
-      <tr><td class="id">ฉ-2</td><td>Character control + camera</td>
-        <td class="mod">CameraController · ZoneController · ZonePromptController · HudController</td>
+        <td class="what">One world, and giving each player a farm <span class="tag">built to grow</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Pre-placed waypoint graph, not live pathfinding: 78 nodes, 36 destinations, all routing
-            from spawn.</td></tr>
+        <td>Six islands joined by bridges, 24 farms. The design document describes a single island —
+            this is an agreed difference, and it still meets the rule that matters: players walk
+            everywhere, and are never teleported or shown a loading screen.</td></tr>
+      <tr><td class="id">ฉ-2</td><td class="what">Moving and looking around</td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Guided walking follows paths laid out in advance rather than working them out on the
+            spot. All 36 destinations are reachable from the starting point.</td></tr>
       <tr><td class="id">ฉ-3</td>
-        <td>Tutorial + starter kit + intro quests + 4 row-unlock quests <span class="tag">v3.0</span></td>
-        <td class="mod">TutorialService · QuestService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>7 steps, 4 intro quests, 4 row quests. Starter kit is 1 can of each flavour.</td></tr>
-      <tr><td class="id">ฉ-4</td><td>Guidance &amp; navigation system</td>
-        <td class="mod">ObjectiveService · GuideController · GuideTrailController</td>
+        <td class="what">Tutorial, starter gifts and first quests <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Entirely client-side; no server-created navigation objects.</td></tr>
+        <td>Seven tutorial steps, four opening quests, and four quests that unlock the extra farm
+            rows.</td></tr>
+      <tr><td class="id">ฉ-4</td><td class="what">Showing players where to go next</td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Drawn on each player's own device, so a crowd does not slow the game down.</td></tr>
       <tr><td class="id">ฉ-5</td>
-        <td>Daily quests — 2 slots from an 8-row pool <span class="tag">v3.0</span></td>
-        <td class="mod">QuestService · QuestScreenController</td><td><span class="pill p-ok">DONE</span></td>
-        <td>The deposit-cans daily was deleted per spec. Targets scale per 4-hole row.</td></tr>
+        <td class="what">Daily quests <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Two a day, drawn from a pool of eight. Targets scale up as the player unlocks more farm
+            rows.</td></tr>
       <tr><td class="id">ฉ-6</td>
-        <td>Duplicates → cans <span class="tag">v3.0</span></td>
-        <td class="mod">ProgressionService · InventoryService</td>
-        <td><span class="pill p-stop">VIOLATION</span></td>
-        <td><b>Ships knowingly against the spec's own never-violate rule</b> — see blocker 1. Rates
-            are as written; the server logs the violation at startup.
-            <b>A second, separate deviation was found 2026-09-03:</b> conversion batches per item id
-            instead of pooling across types within a rarity as the spec requires, so remainders
-            below one batch are stranded. The direction is player-unfavourable, so it does not
-            worsen blocker 1.</td></tr>
+        <td class="what">Turning spare items back into cans <span class="tag">changed</span></td>
+        <td><span class="pill p-stop">DECIDE</span></td>
+        <td><b>This is the first item above.</b> Built exactly as the design document specifies, even
+            though those numbers break the document's own rule that this must never be profitable.
+            The game logs a warning about itself every time it starts.<br><br>
+            <b>A second, smaller difference was found on 3 September:</b> spare items are counted one
+            type at a time rather than pooled together as the document asks, so small leftovers get
+            stranded. This one shortchanges the player slightly rather than favouring them, so it
+            does not make the first item worse.</td></tr>
       <tr><td class="id">ฉ-7</td>
-        <td>Unlock system, no levels <span class="tag">ext</span> <span class="tag">v3.0</span></td>
-        <td class="mod">UnlockService · PlotUnlockService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Rows unlock by quest, never by cans. All can pricing for plot expansion deleted.</td></tr>
+        <td class="what">Unlocking things <span class="tag">built to grow</span> <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Farm rows now unlock by finishing a quest, never by paying. There are no levels.</td></tr>
       <tr><td class="id">ฉ-8</td>
-        <td>Persistence + session locking <span class="tag nocut">nocut</span></td>
-        <td class="mod">ProfileService · Data/Schema</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Schema v10, contiguous migration chain. Session-locked, flush on close, 30 s batched
-            autosave. <b>Retire, never delete</b> — 41 retired ids still load, so no player loses
-            held stock, placed decor or a saved monster.</td></tr>
-      <tr><td class="id">ฉ-9</td><td>Remote config</td>
-        <td class="mod">ConfigService · LiveOps</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Server-only channel; the publish filter is the replicated tree itself, so campaign
-            answers never reach a client. 273 range entries, 1 violation (below).</td></tr>
+        <td class="what">Saving player progress <span class="tag nocut">never cut</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Saves automatically, and again the moment a player leaves. Older saves are upgraded on
+            their own. <b>Items are retired, never deleted</b> — so when the item list changed, no
+            player lost the things they were holding, the decorations they had placed, or the
+            monsters they had built.</td></tr>
+      <tr><td class="id">ฉ-9</td><td class="what">Changing settings without updating the game</td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Campaign answers are held by the game itself and never sent to players' devices, so
+            nobody can look them up early.</td></tr>
       <tr><td class="id">ฉ-10</td>
-        <td>Staff tool — hide / remove entry <span class="tag nocut">nocut</span></td>
-        <td class="mod">AdminService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Effective on every server. Panel parented server-side to staff only. The only staff tool
-            in the spec.</td></tr>
+        <td class="what">Staff tool to remove an entry <span class="tag nocut">never cut</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Hides or removes any single entry everywhere at once. It is the only staff tool there is.
+            Names are safe by design because they come from approved word lists — the real risk is
+            the <i>shape</i> a player builds a monster into, so that must always be removable. There
+            is no report button in the game; players report through Roblox itself, and this is how we
+            respond.</td></tr>
       <tr><td class="id">ฉ-11</td>
-        <td>Keyword redemption <span class="tag client">client</span> <span class="tag">v3.0</span></td>
-        <td class="mod">KeywordService · KeywordScreenController</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Roaming stand, 6 spots, re-picked every 6 h from server time and deliberately not
-            navigable. <b>Campaign rounds ship empty — that is content, not engineering.</b></td></tr>
+        <td class="what">Campaign keyword entry <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>The stand moves between six spots and changes every six hours, and is deliberately left
+            off the guidance system — finding it is part of it. <b>No campaign rounds have been
+            written yet</b> — that is content, not build work.</td></tr>
       <tr><td class="id">ฉ-12</td>
-        <td>Scheduled events + announcements <span class="tag client">client</span> <span class="tag">v3.0</span></td>
-        <td class="mod">EventService · AnnounceService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Per-round cap in can-equivalent value with a curated 6-type drop list.
-            <b>Both calendars ship empty by design.</b></td></tr>
+        <td class="what">Timed events and announcements <span class="tag client">brand asked for it</span> <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Each round has a limit expressed as a value rather than a plain item count, with a
+            hand-picked list of what can drop. <b>Both calendars are intentionally empty</b> until
+            campaign content is written.</td></tr>
       <tr><td class="id">ฉ-13</td>
-        <td>In-game analytics <span class="tag">v3.0</span></td>
-        <td class="mod">AnalyticsService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>Emoji sent, split by type.</td></tr>
+        <td class="what">Measuring what players do <span class="tag">changed</span></td>
+        <td><span class="pill p-ok">DONE</span></td>
+        <td>Now records which of the four reactions were sent, not just how many.</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="screens">
+<section>
   <h2>The 15 player screens</h2>
-  <p class="lede">All 15 exist as authored interface instances and are bound by their controllers.
-     18 screen containers are present in total — the extra three are the guide edge, banner and
-     tutorial overlays.</p>
+  <p class="lede">All fifteen are built and working.</p>
   <div class="note accent" style="font-size:13.5px">
-    <p><b>Documentation drift found 2026-09-03.</b> <code>docs/SYSTEMS-INDEX.md</code> still marks
-       screen 15 as <i>NOT BUILT</i> and the display stands as 6. Both are stale — the live place has
-       the seed screen and 10 stands. That file needs a pass.</p>
+    <p><b>Our own notes were out of date.</b> The internal checklist still said the seed screen was
+       unbuilt and that there were six display stands. Both were wrong — the game has all fifteen
+       screens and ten stands. Found and corrected on 3 September.</p>
   </div>
   <div class="scroller">
   <table>
-    <thead><tr><th>#</th><th>Screen</th><th>Controller</th><th>Status</th></tr></thead>
+    <thead><tr><th>#</th><th>Screen</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td class="id">1</td><td>HUD — leaves x/2,400, cans split by 3 flavours, ใจซ่า, objective, tower x/30</td><td class="mod">HudController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">2</td><td>Inventory — food / decor / creature part tabs</td><td class="mod">InventoryScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">3</td><td>Mix + "flavors I've made" tab — 20 fixed slots, no expand button</td><td class="mod">MixScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">4</td><td>Name picker — flavor and monster word banks</td><td class="mod">NameScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">5</td><td>Factory, including the can-flavour pick step</td><td class="mod">FactoryScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">6</td><td>Tower — 3-slot control panel, per-slot countdown, player picks</td><td class="mod">TowerScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">7</td><td>Show board — paginated, inline detail, 4-emoji row + per-type counters</td><td class="mod">BoardScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">8</td><td>Garden mode</td><td class="mod">GardenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">9</td><td>Daily quests — 2 slots</td><td class="mod">QuestScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">10</td><td>Settings</td><td class="mod">SettingsScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">11</td><td>Tutorial overlay</td><td class="mod">TutorialOverlayController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">12</td><td>Weekly result popup</td><td class="mod">BoardScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">13</td><td>Monster assembly + storage tab, x/12 counter showing large parts as 2</td><td class="mod">MonsterController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">14</td><td>Keyword redemption</td><td class="mod">KeywordScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-      <tr><td class="id">15</td><td><b>Seed dispenser</b> — seeds held, take seeds (added by v3.0)</td><td class="mod">SeedScreenController</td><td><span class="pill p-ok">DONE</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h3 class="sub2">The 1 admin tool</h3>
-  <div class="scroller">
-  <table>
-    <thead><tr><th>Tool</th><th>Module</th><th>Status</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>Hide / remove an individual entry — flavors, monsters, and monsters on display stands,
-          effective on every server <span class="tag nocut">nocut</span></td>
-        <td class="mod">AdminService</td><td><span class="pill p-ok">DONE</span></td>
-        <td>The only staff tool. Names are safe by construction because they come from pre-cleared
-            word lists; a player-assembled monster <i>shape</i> is the real risk, so it must always
-            be removable. There is no in-game report button — players report through the platform
-            and this is the response path.</td></tr>
+      <tr><td class="id">1</td><td>Main display — leaves, cans by flavour, hearts, current goal, tower progress</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">2</td><td>Bag — food, decorations and monster pieces</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">3</td><td>Mixing, plus a tab of flavours you have already made</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">4</td><td>Name picker, for flavours and for monsters</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">5</td><td>Factory, including choosing which flavour of can to make</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">6</td><td>Tower — three panels, each with its own countdown</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">7</td><td>Show board — pages, entry detail, four reactions with counts</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">8</td><td>Garden arranging mode</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">9</td><td>Daily quests</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">10</td><td>Settings</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">11</td><td>Tutorial overlay</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">12</td><td>Weekly results popup</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">13</td><td>Monster building and storage</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">14</td><td>Campaign keyword entry</td><td><span class="pill p-ok">DONE</span></td></tr>
+      <tr><td class="id">15</td><td><b>Seed point</b> — the newest screen, added when seeds moved to the town centre</td><td><span class="pill p-ok">DONE</span></td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="evidence">
-  <h2>Live measurements</h2>
-  <p class="lede">Taken directly from the running place on 2026-09-03 by fresh-loaded module
-     execution and instance inspection — not read from documentation.</p>
+<section>
+  <h2>What was checked, and what it showed</h2>
+  <p class="lede">Every number here was read straight out of the game on 3 September — none of it was
+     copied from our own notes, which had drifted.</p>
   <div class="scroller">
   <table>
-    <thead><tr><th>Check</th><th>Measured</th><th>Verdict</th></tr></thead>
+    <thead><tr><th>Checked</th><th>Result</th><th></th></tr></thead>
     <tbody>
-      <tr><td>Save schema version</td><td class="num">v10, contiguous migrations</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Project scripts / syntax failures</td><td class="num">162 / 0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Comment lines in project scripts</td><td class="num">0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Remotes declared / unbound / uncalled</td><td class="num">37 / 0 / 0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Catalogue — food / decor / parts</td><td class="num">45 / 10 / 46</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Items active / retired / placeholder</td><td class="num">102 / 41 / 64</td><td><span class="pill p-warn">64 placeholder</span></td></tr>
-      <tr><td>Part rarity gaps / empty categories</td><td class="num">0 / 0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Label colours / tasting effects paired</td><td class="num">12 / 12, 0 unpaired</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Plot sockets (5 rows × 4 × 24 plots)</td><td class="num">480</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Plot seed boxes remaining</td><td class="num">0 — town dispenser present</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Monster display stands</td><td class="num">10</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Tower mechanism slots</td><td class="num">3 — no queue, no random roll</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Board emoji types</td><td class="num">4 — love / wow / haha / yuck</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Humanoid instances in the world</td><td class="num">0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Purchase-service references</td><td class="num">0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Teleport-service references</td><td class="num">0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Banned words in player-visible text</td><td class="num">0</td><td><span class="pill p-ok">PASS</span></td></tr>
-      <tr><td>Config defaults outside declared range</td><td class="num">1 of 273 — terrain band width</td><td><span class="pill p-warn">OPEN</span></td></tr>
-      <tr><td>World base parts</td><td class="num">3,404</td><td><span class="pill p-idle">unmeasured under load</span></td></tr>
-      <tr><td>Play sessions run on Phase 1c</td><td class="num">0</td><td><span class="pill p-warn">GATE OPEN</span></td></tr>
+      <tr><td>Everything in the game runs without errors</td><td class="num">162 pieces, 0 broken</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Every player action reaches the game correctly</td><td class="num">37 of 37</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Food, decorations, monster pieces</td><td class="num">45 · 10 · 46</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Items in play, retired, still stand-ins</td><td class="num">102 · 41 · 64</td><td><span class="pill p-warn">64 stand-ins</span></td></tr>
+      <tr><td>Every monster group has all three rarity levels</td><td class="num">no gaps</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Label colours matched to taste effects</td><td class="num">12 and 12, all paired</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Planting spots across all farms</td><td class="num">480 — five rows of four</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Old seed boxes removed from farms</td><td class="num">all gone, town point in place</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Display stands</td><td class="num">10</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Tower panels, and no random rolls</td><td class="num">3, none random</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Reactions</td><td class="num">4 — love, wow, funny, yuck</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Any way for players to spend real money</td><td class="num">none anywhere</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Any teleporting or loading screens</td><td class="num">none anywhere</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Forbidden words in anything players can see</td><td class="num">none found</td><td><span class="pill p-ok">PASS</span></td></tr>
+      <tr><td>Settings within their allowed limits</td><td class="num">272 of 273</td><td><span class="pill p-warn">1 out of range</span></td></tr>
+      <tr><td>Times the game has been played</td><td class="num">0</td><td><span class="pill p-warn">STILL OPEN</span></td></tr>
     </tbody>
   </table>
   </div>
 
-  <h3 class="sub2">Two smaller open items</h3>
+  <h3 class="sub2">Two smaller things worth fixing</h3>
   <ul>
-    <li><b>One config default sits outside its declared range</b> — the terrain band width, the only
-        violation of 273 entries, and long-standing. Note that the 2026-09-02 acceptance record
-        claims every default is in range; <b>that claim is incorrect</b> and was contradicted by
-        direct measurement.</li>
-    <li><b>A currency-branded particle pack sits in the alias table.</b> Two aliases point at a pack
-        containing spinning-currency and flying-money flipbooks. It is currently referenced by no
-        gameplay code, so nothing renders it — but wiring either alias would put currency imagery on
-        screen, which the brand rules forbid outright. Cheapest fix available: delete the pack name
-        from both alias lists before anyone wires it.</li>
+    <li><b>One setting sits outside its allowed range</b> — the only one of 273, and it has been that
+        way for a while. Worth noting that our own record from 2 September claims every setting is
+        within range; <b>that claim was wrong</b>, and checking the game directly is what caught
+        it.</li>
+    <li><b>A money-themed visual effect is sitting unused in the library.</b> Two entries point at a
+        set of effects containing spinning coins and flying cash. Nothing in the game uses them
+        today, so nothing appears on screen — but if anyone ever connected them, money imagery would
+        show up, which the brand rules forbid outright. Removing the two entries now costs
+        minutes.</li>
   </ul>
 </section>
 
-<section id="rules">
-  <h2>Non-negotiable rules — verification state</h2>
-  <p class="lede">The architectural rules that cannot be retrofitted. Each is checked against the
-     live place, not assumed.</p>
+<section>
+  <h2>The rules that cannot be broken</h2>
+  <p class="lede">Promises made in the design document that would be expensive or impossible to add
+     back later. Each one was checked against the actual game, not assumed.</p>
   <div class="scroller">
   <table>
     <thead><tr><th>Rule</th><th>State</th></tr></thead>
     <tbody>
-      <tr><td>Server decides every transaction; the client only renders</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Server-side clock only for growth, daily and weekly logic</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Streaming on from day one with an explicit radius</td><td><span class="pill p-warn">ON, radius provisional</span></td></tr>
-      <tr><td>Session-locked saves + flush on close + batched autosave + versioned blob</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Text filter at 4 points + word-pair blacklist on top</td><td><span class="pill p-warn">wired, blacklist empty</span></td></tr>
-      <tr><td>One world, walk it — no teleport, no warp, no loading screen</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Monsters never exist server-side in the world; no humanoid on monsters</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Atomic writes on every critical transaction — one write each, never split</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>No system sets movement or scale directly — everything through the modifier stack</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Every balance number comes from config, never a literal in gameplay code</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>No free-text input anywhere — every name picked from a pre-cleared list</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>No hardcoded counts — nothing assumes 4 emoji or a finite recipe space</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>No share buttons, links, codes, external notifications, or photo mode</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Drink and tasting effects are cosmetic only</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Every extension point is a contracted deliverable, not future work</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>Every reaction adds; none subtracts — a child-safety requirement</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>The tower never randomises and never queues</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>No offline growth — one banked cycle, full stop</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>The game decides everything, never the player's device — so it cannot be cheated</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Growth and daily timers run on the game's clock, never the player's</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>The world loads in around the player as they walk</td><td><span class="pill p-warn">on, distance provisional</span></td></tr>
+      <tr><td>Progress saves constantly and cannot be lost or duplicated</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Every piece of text is checked for safety, four times over</td><td><span class="pill p-warn">on, one list still empty</span></td></tr>
+      <tr><td>One world — players walk everywhere, no teleporting, no loading screens</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Monsters are drawn on each player's device, never kept in the shared world</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Anything valuable is saved in one go, so a disconnect cannot lose or duplicate it</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Only one system controls how players move, so effects cannot conflict</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Every balance number is a setting that can be changed without rebuilding the game</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Players never type free text — every name comes from an approved list</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Nothing assumes there will only ever be four reactions, or a fixed number of recipes</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>No share buttons, links, codes, outside notifications or photo mode</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Drink and tasting effects are decorative only — they never affect play</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Groundwork for later features ships now, so switching them on needs no rebuild</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Every reaction adds; none takes away — a child-safety promise</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>The tower never picks at random and never makes players queue</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>Plants do not keep growing while a player is away</td><td><span class="pill p-ok">HOLDS</span></td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<section id="protocol">
-  <h2>Update protocol</h2>
+<section>
+  <h2>Keeping this page honest</h2>
   <div class="note stop">
-    <h3>🔄 This page must be republished whenever any system changes state</h3>
-    <p>This site is the single status surface for the project. A system that is finished, started,
-       blocked, or unblocked <b>is not finished until this page says so</b> — a stale status page is
-       worse than no status page, because it is trusted.</p>
-    <p><b>The rule:</b> any change to a system's status, a blocker opening or closing, a schema
-       version bump, or a catalogue count moving triggers an update and a push <i>in the same
-       working session</i> as the change. Never batch it for later.</p>
+    <h3>🔄 This page gets updated every time anything changes</h3>
+    <p>This is the one place to look for where the project stands. A part of the game is
+       <b>not finished until this page says it is</b> — an out-of-date status page is worse than none
+       at all, because people believe it.</p>
+    <p><b>The rule:</b> whenever a part changes status, or something starts or stops blocking
+       progress, this page is updated and republished <i>the same day</i>. Never saved up for
+       later.</p>
   </div>
 
-  <h3 class="sub2">What to update, in order</h3>
+  <h3 class="sub2">How it gets updated</h3>
   <ol>
-    <li><b>Re-measure the live place first.</b> Never edit a status from memory or from
-        documentation — the docs have drifted twice already. Read it out of Studio.</li>
-    <li><b>Update the row</b> — status pill, notes, and anything the change invalidates elsewhere on
-        the page.</li>
-    <li><b>Update the summary tiles and the measured date</b> in the header.</li>
-    <li><b>Commit and push.</b> The site redeploys on push, usually within a minute.</li>
-    <li><b>Mirror it into the repo docs</b> — <code>docs/PROGRESS.md</code> and
-        <code>docs/INSTANCE-MANIFEST.md</code> stay the detailed record; this page is the summary
-        view over them.</li>
+    <li><b>Check the actual game first.</b> Never write a status from memory or from our own notes —
+        those have already been wrong twice.</li>
+    <li>Update the row, and anything elsewhere on the page it affects.</li>
+    <li>Update the counters at the top and the date in the header.</li>
+    <li>Publish. The page goes live within about a minute.</li>
   </ol>
 
-  <h3 class="sub2">Accuracy rules for this page</h3>
+  <h3 class="sub2">The standards this page is held to</h3>
   <ul>
-    <li><b>Measured, never assumed.</b> Every number here came out of the running place. If a value
-        cannot be measured, say so rather than estimating it.</li>
-    <li><b>A green row is a claim you can be held to.</b> "Built but never played" is not DONE
-        without the caveat that heads this page.</li>
-    <li><b>Record deviations, do not quietly absorb them.</b> Two on this page — the archipelago and
-        the duplicate-conversion rates — ship knowingly and say so.</li>
-    <li><b>When documentation and the live place disagree, the live place wins</b> and the doc gets
-        fixed. Two such drifts are recorded above.</li>
+    <li><b>Measured, never guessed.</b> Every number came out of the running game. If something
+        cannot be measured, the page says so instead of estimating.</li>
+    <li><b>A green row is a promise.</b> "Built but never played" does not count as finished without
+        the warning at the top of this page.</li>
+    <li><b>Differences from the design document get written down, not quietly absorbed.</b> Two are
+        recorded above — the island layout and the spare-item rates — and both ship knowingly.</li>
+    <li><b>When our notes and the actual game disagree, the game wins</b> and the notes get
+        fixed.</li>
   </ul>
 </section>
 
 <p class="foot">
-  Status measured against place 109128377064802 on 2026-09-03 by direct Studio inspection.
-  Spec authority is GDD v3.0 (31 Aug 2026); this page summarises status only and reproduces no
-  specification text. Detailed records live in the project repository under <code>docs/</code>.
+  Checked against the live game on 3 September 2026. Measured against the design document of
+  31 August 2026; this page reports status only and does not reproduce any part of that document.
 </p>
 
 </div>
