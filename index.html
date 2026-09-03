@@ -133,20 +133,22 @@
   <div class="tile warn"><div class="n">3</div><div class="l">Waiting on brand</div></div>
   <div class="tile stop"><div class="n">1</div><div class="l">Needs a decision</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
-  <div class="tile stop"><div class="n">17</div><div class="l">Open findings</div></div>
+  <div class="tile stop"><div class="n">26</div><div class="l">Open findings</div></div>
   <div class="tile warn"><div class="n">0</div><div class="l">Times played yet</div></div>
 </div>
 
 <div class="note accent">
   <h3>Reviewed top to bottom on 3 September</h3>
-  <p>Four parallel reviews — safety and cheating, system-by-system conformance, performance, and
-     brand copy — run against the whole game. <b>Four faults were found in the farm loop and fixed
-     the same day; 17 findings remain open.</b> Each one below says whether the build team can act
-     now or whether it is waiting on you.</p>
-  <p><b>Of the 17: seven can be done today</b> with nothing blocking them · <b>seven</b> need a
+  <p>Four parallel reviews — safety and cheating, all 35 parts against the design document,
+     performance, and brand copy. <b>Five faults were found in the farm loop and fixed the same day;
+     26 findings remain open.</b> Each one below says whether the build team can act now or whether
+     it is waiting on you.</p>
+  <p><b>Of the 26: sixteen can be done today</b> with nothing blocking them · <b>seven</b> need a
      decision or an approval from the brand owner · <b>two</b> need an art instruction · <b>one</b>
-     cannot be settled without testing on a real phone. One of the seven that can be done today
-     also needs a phone afterwards.</p>
+     cannot be settled without testing on a real phone.</p>
+  <p>Against the design document: <b>20 of the 35 parts match, 5 do not, 10 match in part, and
+     nothing is missing entirely.</b> No safety or cheating problem of any severity was found, and
+     everything players can currently read passed the brand check.</p>
 </div>
 
 <div class="note warn">
@@ -270,6 +272,14 @@
             water.</td>
         <td>Same as F3.</td>
         <td><span class="pill p-ok">FIXED</span></td></tr>
+      <tr><td class="id">F5</td>
+        <td><b>Caused by fixing F3 and F4, and caught the same day.</b> Once a plant returned to
+            waiting-for-water after a pour, watering it again wiped out any leaves it had already
+            earned but the player had not yet picked up.</td>
+        <td>Silent loss of a reward the player had earned, and the design document explicitly
+            promises nothing is lost. Now the leaves are banked into the player's bag automatically
+            at the moment of pouring, exactly as the document describes.</td>
+        <td><span class="pill p-ok">FIXED</span></td></tr>
       <tr><td class="id">—</td>
         <td><i>Not a fault.</i> Pouring a ready plant keeps the leaves it had already earned.</td>
         <td>This was briefly mistaken for a loophole during the review. The design document
@@ -391,16 +401,94 @@
   </table>
   </div>
 
+  <h3 class="sub2">Found by the system-by-system sweep — all 35 parts checked</h3>
+  <p class="lede">Every one of the 35 parts of the game was read against the design document.
+     <b>20 match · 5 do not · 10 match in part.</b> Nothing was found completely missing. The
+     five that do not match, and the most important partial gaps:</p>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>#</th><th>Finding</th><th>Effect</th><th>Who can act</th></tr></thead>
+    <tbody>
+      <tr><td class="id">M18</td>
+        <td><b>A monster placed on a display stand cannot be removed by staff</b> unless it also has
+            a board entry. The moderation tool only looks entries up through the board.</td>
+        <td>This is the one staff tool in the game and it is on the never-cut list precisely because
+            a player-built monster <i>shape</i> is the real moderation risk. A stand-only monster is
+            currently unreachable.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M19</td>
+        <td><b>A brand-new player cannot finish the "build your first friend" quest.</b> The starter
+            monster pieces are granted <i>after</i> the quest completes, and building fails without
+            pieces.</td>
+        <td>A dead end on a fresh account, which also blocks the fourth farm row from ever
+            unlocking.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M20</td>
+        <td><b>Per-type reaction counts do not survive syncing between servers.</b> The board shows
+            four separate emoji counts, but the shared record that travels between servers still
+            stores a single total.</td>
+        <td>The four-emoji breakdown is on the never-cut list as a child-safety requirement. Right
+            now the detail exists on one server and is lost across them.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M21</td>
+        <td><b>Tower prices do not reset at the day boundary for a player who stays connected.</b>
+            Someone online across midnight keeps yesterday's increased price.</td>
+        <td>Known failure pattern. Small, but it is a price the player sees.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M22</td>
+        <td><b>Three of the six oversized monster pieces cannot actually be placed</b> — they are
+            missing their size definitions, so the game rejects them.</td>
+        <td>Half the large-piece feature is unusable.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M23</td>
+        <td><b>The main display shows one total can count</b> where the design document asks for the
+            three flavours shown separately. The information is already being sent — the screen just
+            does not use it.</td>
+        <td>Players cannot see which flavour they are short of before walking to the factory.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M24</td>
+        <td><b>The factory has no "how many" control</b> — it always converts every leaf the player
+            is carrying.</td>
+        <td>The design document asks for an adjustable amount, defaulting to everything carried.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+      <tr><td class="id">M25</td>
+        <td><b>Two required measurements are not being recorded</b> — how often players pour, and the
+            value returned by converting spares.</td>
+        <td>These are exactly the two numbers needed to settle M1. Without them, the balance decision
+            is made blind.</td>
+        <td><span class="who w-now">DO NOW</span><br>needed before M1</td></tr>
+      <tr><td class="id">M26</td>
+        <td><b>Only three tables can be changed remotely</b> without republishing the game. The design
+            document lists many more — the colour palette, name banks, recipes, the featured set,
+            effects and keyword locations.</td>
+        <td>The campaign is meant to run for a year without game updates. Today most of it cannot be
+            adjusted that way.</td>
+        <td><span class="who w-now">DO NOW</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note warn" style="margin-top:18px">
+    <h3>One count could not be settled and is not being claimed either way</h3>
+    <p>Two separate checks measured the monster-piece catalogue differently — one found the required
+       46 with the correct uneven split across the seven groups, another found a flat seven per
+       group. <b>Neither has been confirmed.</b> It is recorded as unresolved rather than reported as
+       a pass, and needs one definitive recount.</p>
+  </div>
+
   <div class="note accent">
-    <h3>Two claims in this review were wrong, and were caught by re-checking the game</h3>
+    <h3>Three claims in this review were wrong, and were caught by re-checking the game</h3>
     <p>A reviewer reported that progress saves only every five minutes, breaking a core promise. It
        does not — the five-minute figure belongs to a third-party component the game does not rely
        on; the game runs its own <b>30-second</b> save loop. <b>The promise holds.</b></p>
     <p>An earlier note on this page said the forbidden-word-pairing list was empty. <b>It is not —
        it holds four pairings</b>, all for monster names. The real gap is narrower and is now
        recorded correctly as M4 above.</p>
-    <p>Both were caught the same way: by measuring the running game instead of trusting a summary.
-       That is the standard this page is held to.</p>
+    <p>And the fix for F3/F4 introduced F5, a way to lose a player's earned leaves. <b>The review
+       caught it the same day, before anyone played it.</b> It is listed as a fault above rather
+       than quietly folded into the original fix.</p>
+    <p>All three were caught the same way: by measuring the running game instead of trusting a
+       summary. That is the standard this page is held to.</p>
   </div>
 </section>
 
