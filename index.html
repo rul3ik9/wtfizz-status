@@ -195,6 +195,16 @@
   <p><b>This pass was played, not just measured.</b> The game was run and the four button pictures were
      confirmed to load, the sliding names confirmed to open and close, and the corrected growing confirmed
      to hold a button perfectly still at its centre. The game started with no errors.</p>
+  <p><b>You then found a fault by playing it, and it turned out to be a wider one.</b> The name label stayed
+     stuck open after you closed the screen a button had opened. The cause is that a button is never told
+     the pointer has left it when the whole display is switched off underneath a still mouse — so it stayed
+     stuck in its pointed-at state. That was true of <em>every</em> button in the game, not only the four new
+     ones: any button you were pointing at as its screen closed came back slightly enlarged and lit. All of
+     them now let go properly.</p>
+  <p><b>The four buttons then became plain pictures with no coloured tile behind them, and larger</b> — your
+     call. They now read directly against the game world, which works because each picture is cut out with a
+     thick white edge. That white edge is now doing real work, so any future picture dropped into those four
+     slots needs one.</p>
   <p>The build is deliberately grey-box — real shapes and real rules, placeholder looks. <b>Artwork
      is the next major stage, and it cannot start until the names and colours are approved.</b> That
      is the single thing most worth your attention right now.</p>
