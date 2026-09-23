@@ -121,15 +121,15 @@
 </header>
 
 <div class="tiles">
-  <div class="tile ok"><div class="n">31</div><div class="l">Parts built</div></div>
-  <div class="tile warn"><div class="n">3</div><div class="l">In progress</div></div>
+  <div class="tile ok"><div class="n">29</div><div class="l">Parts built</div></div>
+  <div class="tile warn"><div class="n">5</div><div class="l">In progress</div></div>
   <div class="tile stop"><div class="n">2</div><div class="l">Waiting on you</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
 </div>
 
-<div class="bar" aria-label="31 of 36 parts built, 3 in progress, 2 waiting on approval">
-  <i class="b-ok" style="width:86.1%"></i>
-  <i class="b-warn" style="width:8.3%"></i>
+<div class="bar" aria-label="29 of 36 parts built, 5 in progress, 2 waiting on approval">
+  <i class="b-ok" style="width:80.6%"></i>
+  <i class="b-warn" style="width:13.9%"></i>
   <i class="b-stop" style="width:5.6%"></i>
 </div>
 <div class="barkey">
@@ -140,6 +140,16 @@
 
 <div class="note ok">
   <h3>Where the project is</h3>
+  <p><b>Played start to finish on 23 September, from a brand-new save.</b> Planting, watering, the
+     tea plant's new looks, harvesting, the factory, pouring, collecting, the seed stand, the lab, the
+     tower screen, the show board screen, the gift sign, the quest list and garden decorating all
+     worked. The run found and fixed one fault that had quietly stopped every farm: <b>the water tank
+     offered no pump and no bucket</b>, so no plant could ever be watered. It turned up three more that
+     are not fixed yet: in the mixing room <b>only one ingredient can be picked</b>, because the choices
+     sit stacked on top of each other; a named flavour <b>cannot be put on the show board</b>; and
+     <b>the free starter monster pieces are old pieces the lab no longer shows</b>, so a new player's
+     first monster has nothing to build with. Walking from the farms to town is still paused until the
+     new way to travel is decided.</p>
   <p><b>All 35 parts of the game exist.</b> A player can plant, water, pour, harvest, make cans,
      invent a flavour, name it, put it on the show board, build a monster, put it on display, and
      use the tower. Every one of the 15 player screens is built, and as of 5 September every one can actually be opened by playing &mdash; which was not true before.</p>
@@ -403,7 +413,11 @@
       <tr><td class="what">Planting, watering, picking, plant lifespan</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Reworked on 3 September to match the design document exactly: at every round the player
-            chooses watering or pouring, and after twenty collections the plant is spent.</td></tr>
+            chooses watering or pouring, and after twenty collections the plant is spent. <b>On 23 September
+            the plant took on its five looks</b> (seed, sprout, bush, spent, and a full bloom after a pour, with
+            the pour's gifts shown on it). A water-drop sign floats over any plant that needs water, and a spent
+            plant waits to be dug out. <b>The same day's play-through found the water tank had offered no pump
+            and no bucket since its redesign</b>, so watering was impossible. Fixed and played.</td></tr>
       <tr><td class="what">Pouring, and what drops from it</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Yellow gives food, purple gives monster pieces, pink gives decorations. Five featured
@@ -442,7 +456,9 @@
         <td><span class="pill p-stop">WAITING ON YOU</span></td>
         <td>Twenty recipe slots and the twelve-colour system are built and working. Mixing and naming
             became one step on 18 September, so nothing is taken from the player until they confirm a
-            name. Waiting on the approved colour values.</td></tr>
+            name. Waiting on the approved colour values. <b>Played on 23 September: the ingredient choices
+            draw on top of each other, so only one ingredient can be picked and no mix can be made by hand.</b>
+            Not fixed yet.</td></tr>
       <tr><td class="what">Naming, and the word safety checks</td>
         <td><span class="pill p-warn">IN PROGRESS</span></td>
         <td>Players never type anything — every name is assembled from an approved word list and
@@ -450,8 +466,10 @@
             12 September:</b> the words now come from the ingredients in that particular mix rather than
             from the whole list, there is one slot per ingredient plus one for the extra word, the player
             arranges them in any order, and backing out of naming cancels the whole mix and costs nothing.
-            A name can no longer be changed afterwards. Built but not yet played through by hand, and the
-            approved names are still needed.</td></tr>
+            A name can no longer be changed afterwards. <b>Played through on 23 September</b> (with the picking
+            fault above worked around): the words, the slot count and paying only on confirm all behave as agreed.
+            The recipe list still shows an internal code instead of the chosen name. The approved names are still
+            needed.</td></tr>
       <tr><td class="what">Drawing the cans</td>
         <td><span class="pill p-warn">IN PROGRESS</span></td>
         <td>A check of the running game on 16 September found that the detailed can — label, colour
@@ -483,10 +501,12 @@
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Up to ten shown near any one player, even in a crowd.</td></tr>
       <tr><td class="what">Collecting monster pieces</td>
-        <td><span class="pill p-ok">REBUILT</span></td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
         <td>One scrolling list, no categories. A monster with five eyes and no head is allowed on purpose.
             <b>From 8 September every row shows the real piece turning in 3D</b> rather than its name, so a
-            young player can pick by looking instead of reading.</td></tr>
+            young player can pick by looking instead of reading. <b>23 September:</b> the free starter set
+            given to every new player is made of older pieces the lab no longer lists, so it shows up empty.
+            Pieces from pouring appear normally. Not fixed yet.</td></tr>
       <tr><td class="what">Saving monsters</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Already prepared for monsters helping on the farm, so that can be switched on later
@@ -536,9 +556,11 @@
     <thead><tr><th>Part</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
       <tr><td class="what">The show board</td>
-        <td><span class="pill p-ok">BUILT</span></td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
         <td>Everything a player makes goes on it. The order is shuffled each time it opens, so the
-            same few entries do not always sit at the top.</td></tr>
+            same few entries do not always sit at the top. <b>23 September: a flavour cannot be posted.</b>
+            The board still expects the older three-word names, and flavour names changed shape when naming
+            moved inside mixing on 18 September. Monsters are unaffected. Not fixed yet.</td></tr>
       <tr><td class="what">Keeping the board the same everywhere</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>The four separate reaction counts are now carried between servers, so the breakdown is the
