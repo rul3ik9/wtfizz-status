@@ -124,7 +124,7 @@
   <div class="meta">
     <span><b>Measured</b> 3 September 2026</span>
     <span><b>Place</b> 109128377064802</span>
-    <span><b>Schema</b> v10</span>
+    <span><b>Schema</b> v16 (measured 5 Oct)</span>
     <span><b>Spec</b> GDD v3.0 (31 Aug 2026)</span>
     <span><b>Scripts</b> 162 · 0 syntax failures · 0 comments</span>
     <span><b>Play sessions</b> 0</span>
@@ -963,6 +963,23 @@
   <h2>Work log</h2>
   <p class="lede">Newest first. The full narrative record lives in the private repository under
      <code>docs/PROGRESS.md</code>; this is the summary.</p>
+
+  <h3 class="sub2">5 October 2026 — the water tank and the watering Phant can be moved again</h3>
+  <ul>
+    <li><b>Save schema v15 → v16.</b> The schema tile above was last written at v10; versions 11 to 15 are
+        recorded in the private <code>docs/PROGRESS.md</code>. v16 was read from the live place today.</li>
+    <li>The farm's water tank and the watering Phant's stand are movable fixtures again, through the same
+        garden mode as decorations: drag, rotate, or pick up and place. Neither can be thrown away or put
+        in the bag. The server checks the plot owner, a running farm action and the whole footprint
+        before it moves anything.</li>
+    <li>The new world's hand-built tank had quietly frozen the movable-tank rule from 28 August, and old
+        saves held tank positions that had never been shown. The v16 migration resets those positions, so
+        nothing on screen jumps.</li>
+    <li>Two animation fixes on the same pass: one flavour-pour variant no longer swings the can behind
+        the head, and the fizzing tea bush shakes more gently.</li>
+    <li>Played in the editor with one player, using real mouse and keyboard input. Phone touch and two
+        players are not yet checked.</li>
+  </ul>
 
   <h3 class="sub2">3 September 2026 — farm loop conformance, and a four-way review</h3>
   <ul>
