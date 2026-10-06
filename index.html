@@ -122,15 +122,15 @@
 
 <div class="tiles">
   <div class="tile ok"><div class="n">29</div><div class="l">Parts built</div></div>
-  <div class="tile warn"><div class="n">7</div><div class="l">In progress</div></div>
+  <div class="tile warn"><div class="n">8</div><div class="l">In progress</div></div>
   <div class="tile stop"><div class="n">2</div><div class="l">Waiting on you</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
 </div>
 
-<div class="bar" aria-label="29 of 38 parts built, 7 in progress, 2 waiting on approval">
-  <i class="b-ok" style="width:76.3%"></i>
-  <i class="b-warn" style="width:18.4%"></i>
-  <i class="b-stop" style="width:5.3%"></i>
+<div class="bar" aria-label="29 of 39 parts built, 8 in progress, 2 waiting on approval">
+  <i class="b-ok" style="width:74.4%"></i>
+  <i class="b-warn" style="width:20.5%"></i>
+  <i class="b-stop" style="width:5.1%"></i>
 </div>
 <div class="barkey">
   <span><span class="dot d-ok"></span>Built and working</span>
@@ -591,11 +591,17 @@
     <tbody>
       <tr><td class="what">The tower</td>
         <td><span class="pill p-ok">BUILT</span></td>
-        <td>The player chooses the effect from three panels — no random rolls, no queueing. Prices now
-            reset correctly at the start of a new day, including for players who stay online.
-            <b>Changed on 6 October at your request:</b> the ten-minute wait between a player's own pours is gone;
-            only the rising daily price limits how often one player pours. Checked that the game starts cleanly;
-            a pour has not yet been played.</td></tr>
+        <td>The player chooses the effects — no random rolls. <b>Changed on 6 October at your request:</b> one pour now
+            picks an effect for every free panel at once, and a busy panel's pick waits in one tower-wide queue and
+            starts by itself when its panel frees. Anyone whose turn never came gets their cans back when they leave
+            or the server closes, with a short message the next time they join. The ten-minute wait between a
+            player's own pours is gone. Played the same day: pouring, queueing, the automatic start and the refund
+            message all worked. The new tower screen itself has not yet been seen in a play-through.</td></tr>
+      <tr><td class="what">The board above the tower</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>New on 6 October: three slowly circling boards above the can show which effects are running, who
+            started them and how long is left, followed by the queue. Seen in the game; wording is waiting for the
+            brand check.</td></tr>
       <tr><td class="what">Running several effects at once</td>
         <td><span class="pill p-ok">BUILT</span></td>
         <td>Three effects together, each with its own countdown, and they combine properly.</td></tr>
