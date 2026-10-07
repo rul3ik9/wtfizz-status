@@ -657,14 +657,27 @@
       <tr><td class="id">ง-1</td>
         <td class="what">The tower itself <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Rebuilt this round. The player now <i>chooses</i> the effect from three panels instead
-            of getting a random one, and there is no queue. If a panel is already busy the game says
-            so <b>before</b> taking any cans, and it does not start a waiting period either.</td></tr>
+        <td><b>Measured 7 October.</b> The player <i>chooses</i> the effects; nothing is random. Owner rulings of
+            6 and 7 October: one pour picks up to one effect per panel, and its effects share one end time
+            (<code>fill()</code> starts a whole pour only when no panel is busy). Every pour made during a round
+            queues whole in one tower-wide queue, paid at the pour, and is refunded on leave or shutdown with a
+            notice on next join. The per-player wait is gone. Price is <code>3 + 2 × pours today</code>, reset at
+            00:00 Thai time; the screen shows the reset time and countdown. Played with one client through the
+            real remotes; two clients, late join and phone not yet tested.</td></tr>
       <tr><td class="id">ง-2</td>
         <td class="what">Running several effects at once <span class="tag">built to grow</span> <span class="tag">changed</span></td>
         <td><span class="pill p-ok">DONE</span></td>
-        <td>Three effects can run together, each with its own countdown. They now combine properly —
-            bouncing plus slow motion no longer sends players flying at full height.</td></tr>
+        <td>Up to three effects from one pour run together on one shared countdown, and they combine properly —
+            bouncing plus slow motion no longer sends players flying at full height. 7 October: ice rebuilt
+            as a momentum glide (<code>CharacterMotion.IceGlide</code>), still through the effect stack.</td></tr>
+      <tr><td class="id">ง-3</td>
+        <td class="what">Town show during a pour <span class="tag">new</span></td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td>Client-only layers in <code>Controllers/HubFx</code> (17 modules, measured 7 October), all numbers in
+            <code>hub.fx.*</code>: rail lights and beams, fizz fountain, ground ring, one countdown hoop per
+            running effect, dusk grade for players inside the Hub, glowing FACTORY and LAB signs, statue eyes,
+            prop reactions. Off, wake, active and flat states follow server time. Checked with one client.
+            Open: sound and tower arms (owner), phone load, two clients, late join.</td></tr>
     </tbody>
   </table>
   </div>
@@ -899,7 +912,7 @@
       <tr><td>Drink and tasting effects are decorative only — they never affect play</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>Groundwork for later features ships now, so switching them on needs no rebuild</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>Every reaction adds; none takes away — a child-safety promise</td><td><span class="pill p-ok">HOLDS</span></td></tr>
-      <tr><td>The tower never picks at random and never makes players queue</td><td><span class="pill p-ok">HOLDS</span></td></tr>
+      <tr><td>The tower never picks at random, and runs one pour at a time (owner, 7 October)</td><td><span class="pill p-ok">HOLDS</span></td></tr>
       <tr><td>Plants do not keep growing while a player is away</td><td><span class="pill p-ok">HOLDS</span></td></tr>
     </tbody>
   </table>
