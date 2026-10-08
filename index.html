@@ -122,15 +122,15 @@
 
 <div class="tiles">
   <div class="tile ok"><div class="n">32</div><div class="l">Parts built</div></div>
-  <div class="tile warn"><div class="n">10</div><div class="l">In progress</div></div>
+  <div class="tile warn"><div class="n">11</div><div class="l">In progress</div></div>
   <div class="tile stop"><div class="n">2</div><div class="l">Waiting on you</div></div>
   <div class="tile ok"><div class="n">15/15</div><div class="l">Player screens</div></div>
 </div>
 
-<div class="bar" aria-label="32 of 44 parts built, 10 in progress, 2 waiting on approval">
-  <i class="b-ok" style="width:72.7%"></i>
-  <i class="b-warn" style="width:22.7%"></i>
-  <i class="b-stop" style="width:4.6%"></i>
+<div class="bar" aria-label="32 of 45 parts built, 11 in progress, 2 waiting on approval">
+  <i class="b-ok" style="width:71.1%"></i>
+  <i class="b-warn" style="width:24.4%"></i>
+  <i class="b-stop" style="width:4.5%"></i>
 </div>
 <div class="barkey">
   <span><span class="dot d-ok"></span>Built and working</span>
@@ -146,7 +146,10 @@
      while the monster is built and lock back down at the seal. The eight small jars on the lab walls each hold a
      ready-made monster that reacts to tower rounds and to your own build. On the town headland, the dog is now a
      carved stone statue that comes alive now and then, pours fizz from its mouth, and dances, shrinks or grows a big
-     head during tower rounds. Each was checked in the editor; phones and two players are still to try.</p>
+     head during tower rounds. And the sun itself now has a working face: it peers, sneezes or giggles now and then,
+     its rainbow follows its mouth and reacts to its mood, and during a tower round it bobs, spins its rays and takes on
+     the effects. Fixing it also fixed something older: the sun had never actually been visible to players in a real
+     session, only in the editor. Each was checked in the editor; phones and two players are still to try.</p>
   <p><b>Also on 8 October: a performance pass over the whole game, and a graphics-quality setting.</b> Every piece of game
      code was read for wasted work and 116 changes were made that do the same thing with less effort: nothing a player
      sees, feels or saves is different, the code just stops repeating lookups, re-reading settings every frame, and
@@ -655,6 +658,18 @@
             head, and surges when it barks or yawns. During a tower round it dances to the beat, its eyes glow in
             the effect's colour, it shrinks with the shrink effect and its head swells with the big-head effect.
             Checked in the editor with a simulated tower round. A real pour, phones and two players are still to try.</td></tr>
+      <tr><td class="what">The sun</td>
+        <td><span class="pill p-warn">IN PROGRESS</span></td>
+        <td><b>New on 8 October, at your request.</b> The sun in the sky now has a working face and a working ring of rays.
+            Most of the time it holds still, exactly as drawn. Every so often it comes alive for a few seconds: it peers
+            suspiciously down at the islands, raises one brow and blinks; or it winds up and sneezes, pulling its rays in,
+            then flinging them out while the rainbow gushes; or it falls into a fit of giggles that makes the rays twinkle.
+            Every player sees the same moment. The rainbow pouring from its mouth follows the mouth and thins, stops or
+            gushes with the mood. During a tower round it bobs to the beat and its rays spin, the rainbow runs faster, and
+            the effects reach the sky too: the face shrinks or swells inside its ring, shivers with the ice effect and
+            wobbles like jelly. <b>Found while doing this:</b> the sun had never actually appeared for players in a real
+            session, only in the editor. That is fixed. Checked in the editor with a simulated tower round and two of the
+            three moods caught live. A real pour, the sneeze live, phones and two players are still to try.</td></tr>
     </tbody>
   </table>
   </div>
